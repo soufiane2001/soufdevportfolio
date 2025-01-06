@@ -1,134 +1,48 @@
-import React from 'react'
-import './style.css'
-import htc from '../assets/htc.png'
-import rn from '../assets/react-native.png'
-import rj from '../assets/react.j.png'
-import lr from '../assets/Laravel.png'
-import ns from '../assets/nextjs-.png'
-import mysql from '../assets/mysqll.png'
-import frb from '../assets/frb.png'
-import bst from '../assets/bts.png'
-import jq from '../assets/jquery.png'
-import tlw from '../assets/tll.png'
-import java from '../assets/java.png'
-import typ from '../assets/Typescript.png'
-function Skills() {
+import React from 'react';
+import './style.css';
+import { FaReact, FaLaravel, FaPhp, FaBootstrap, FaAndroid } from 'react-icons/fa';
+import { SiExpo, SiMysql, SiNextdotjs, SiFirebase, SiTailwindcss,SiTypescript  } from 'react-icons/si';
+
+
+const skillsData = [
+  { name: 'React', icon: <FaReact />, level: 8 },
+  { name: 'React Native', icon: <FaReact />, level: 7 },
+  { name: 'Expo CLI', icon: <SiExpo />, level: 7 },
+  { name: 'Laravel', icon: <FaLaravel />, level: 7 },
+  { name: 'MySQL', icon: <SiMysql />, level: 7 },
+  { name: 'Typescript', icon: <SiTypescript/>, level: 7 },
+  { name: 'Android Studio', icon: <FaAndroid />, level: 5 },
+  { name: 'PHP', icon: <FaPhp />, level: 7 },
+  { name: 'Next.js', icon: <SiNextdotjs />, level: 7 },
+  { name: 'Firebase', icon: <SiFirebase />, level: 6 },
+  { name: 'Bootstrap', icon: <FaBootstrap />, level: 9 },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, level: 7 }
+];
+
+const Skills = () => {
   return (
-    <div>
-        <h1 className='ski'>My Skills</h1>
-
-      <div className='skills'>
-            <div className='card'>
-                <div className='div1'>
-                <img src={htc} className='card1 c' />
-                </div>
-           <div className='div2'>
-                <p>Html&CSS</p>
-           </div>     
-            </div>          
-            <div className='card'>
-            <div className='div1'>
-                <img className='card2 c' src={"https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"} />
-             </div>
-             <div className='div2'>
-                <p>Javascript</p>
-                </div>  
-            </div> 
-            <div className='card'>
-                <div className='div1'>
-                <img className='card3 c' src={rn} />
-                </div>
-                <div className='div2'>
-                <p>React native</p>
-                </div>
-           
-            </div> 
-
-            <div className='card'>
-                <div className='div1'>
-                <img className='card4 c' src={lr} />
-                </div>
-                <div className='div2'>
-                <p>Laravel</p>
-                </div>
-            </div> 
-            <div className='card'>
-
-                <div className='div1'>
-                <img className='card6' src={mysql} />
-                </div>
-                <div className='div2'>
-                <p >Mysql</p>
-                </div>
-            </div> 
-            <div className='card'>
-            <div className='div1'>
-                <img className='card5' src={ns} />
-                </div>
-                <div className='div2'>
-                <p > Nextjs</p>
-                </div>
-            </div> 
-            <div className='card'>
-            <div className='div1'>
-                <img className='card3 c' src={rj} />
-                </div>
-                <div className='div2'>
-                <p>React js</p>
-                </div>
-            </div> 
-            
-            <div className='card'>
-            <div className='div1'>
-                <img className='card7 ' src={frb} />
-                </div>
-                <div className='div2'>
-                <p className=''>FireBase</p>
-                </div>
-            </div> 
-            <div className='card'>
-            <div className='div1'>
-
-                <img className='card7 c' src={bst} />
-                </div>
-                <div className='div2'>
-                <p className=''>Bootstrap</p>
-                </div>
+    <div className="skills-container" id="skills">
+      <h2>My Skills</h2>
+      <div className="skills-grid">
+        {skillsData.map((skill, index) => (
+          <div key={index} className="skill-row">
+            <div className="skill-info">
+              <span className="skill-icon">{skill.icon}</span>
+              <span className="skill-name">{skill.name}</span>
             </div>
-          
-            <div className='card'>
-            <div className='div1'>
-                <img className='card9 ' src={java} />
-                </div>
-                <div className='div2'>
-                <p >java</p>
-                </div>
+            <div className="skill-dots">
+              {Array.from({ length: 10 }).map((_, dotIndex) => (
+                <span
+                  key={dotIndex}
+                  className={`dot ${dotIndex < skill.level ? 'filled' : ''}`}
+                ></span>
+              ))}
             </div>
-            <div className='card'>
-            <div className='div1'>
-
-                <img className='card9 ' src={tlw} />
-                </div>
-                <div className='div2'>
-                <p >Tailwind css</p>
-                </div>
-            </div>
-           
-            <div className='card'>
-            <div className='div1'>
-                <img className='card9 ' src={typ} />
-                </div>
-                <div className='div2'>
-                <p className=''>Typescript</p>
-                </div>
-            </div>
+          </div>
+        ))}
       </div>
-
-     
-
-
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

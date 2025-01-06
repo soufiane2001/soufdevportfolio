@@ -1,160 +1,80 @@
-h1{
-    color: aliceblue;
-    text-align: center;
-    font-family: "Raleway", sans-serif;
-}
-.skills{
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;  flex-wrap: wrap;
- padding-left: 17%;
- padding-right: 17%;
-    padding-bottom: 75px;
-}
-.ski{
-    margin-top: 300px;
-}
-.card{
-    width: 150px;
-
-    height: 155px;
-    background-color: rgb(63, 64, 65);
-   margin-left: 25px;
-    border-radius: 10px;
-  margin-top: 45px;
-   
-}
-.card:hover{
-    cursor: pointer;
-    background-color: rgb(193, 169, 18);
-}
-
-.div1{
-   
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.div2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30%;
-}
-
-
-
-.card p{
-    color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-    font-size: 12pt;
-
-}
-.card1{
-    width: 100px;
-    height: 55px;
-   
-}
-.card2 {
-    width: 55px;
-    height: 60px;
-}
-.card3{
-    width: 100px;
-    height: 60px;
-}
-.card4{
-    width: 70px;
-    height: 60px;
-}
-
-.card5{
+.skills-container {
+    padding: 2rem;
  
-    width: 130px;
-    height: 100px;
-}
-.card6{
-    margin-top: 0px;
-    width: 120px;
-    height: 100px;
-}
-.card7{
-    margin-top:-10px;
-    width: 60px;
-    height: 60px;
-}
-.card8{
-    height:70px;
-    border-radius: 15px;
-}
-.card9{
-    width: 55px;
-height: auto;
-}
-.cp5{
-    margin-top: -20px;
-}
-.cp6{
-    margin-top: 5px;
-}
-
-
-
-@media (max-width: 900px) {
-.ski{
-    margin-top: 95px;
-}
-    .skills{
-        
-     
-      padding: 5px;
-        padding-bottom: 75px;
-    }
-
-
-
-}
-
-@media (max-width: 450px) {
-    .ski{
-        margin-top: 95px;
-        margin-left: 0px;
-    }
-    .skills{
-        justify-content: space-between;
-    }
-        .card{
-            width: 100px;
-        height: 120px;
-        }
-    .card p{
-        font-size: 10pt;
-    }
-    
-    
-    }
-
-    @media (max-width: 380px) {
-        .ski{
-            margin-top: 95px;
-        }
-        .skills{
-            justify-content: space-between;
-        }
-            .card{
-                width: 95px;
-            height: 110px;
-            }
-        .card p{
-            font-size: 9pt;
-        }
-        
-        
-        }
-
-
-
-
-
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-grid {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .skill-row {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .skill-row:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .skill-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+    color: #61dafb; /* Default color for React icon */
+  }
+  
+  .skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .skill-dots {
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .dot.filled {
+    background-color: #a855f7;
+  }
+  
+  /* Custom style for VS Code icon */
+  .custom-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  

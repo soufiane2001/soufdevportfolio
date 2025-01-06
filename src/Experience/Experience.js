@@ -1,95 +1,66 @@
-import React from 'react'
-import './style.css'
 
 
+import React from 'react';
+import './style.css';
 
 
-function Experience() {
+const experiences = [
+  {
+    title: 'Junior Frontend Developer',
+    company: 'NevTach',
+    period: '2021',
+    description: [
+      'Built responsive websites from scratch, focusing on clean, maintainable code using HTML, CSS, and JavaScript.',
+      'Worked closely with the backend team to integrate APIs and handle data fetching, ensuring seamless interaction between frontend and backend.',
+      
+    ]
+  },
+
+  {
+    title: 'Frontend Developer',
+    company: 'CASAKOOL',
+    period: '2022 – 2023',
+    description: [
+      'Developed and maintained dynamic, responsive websites using HTML5, CSS3, JavaScript (ES6+), and React.js,Electron js to build ERP software',
+      'Collaborated with UI/UX designers to bring mockups to life, enhancing user interactions and visual elements with animations and transitions.',
+      'Implemented API integrations using RESTful services, ensuring smooth data flow between frontend and backend systems.'
+    ]
+  },
+ 
+  {
+    title: 'Fullstaxk Developer',
+    company: 'KZ LEVAGE',
+    period: '2024',
+    description: [
+      'Developed and maintained dynamic, responsive websites using php 8, ensuring optimal user experience and performance,and handling data of clients',
+      'Implemented API integrations using RESTful services, ensuring smooth data flow between frontend and backend systems.'
+    ]
+  },
+ 
+];
+
+const Experience = () => {
   return (
-    <div className='experience'>
-        
-     <h1>Experience</h1>
-    
-    
-    <div className='exps'>
-      
-      
-        <div className='exp'>
-           
-             <h3>2024</h3>
-            
-             <div className='baricons'>
-             <div class="glowing-ball"></div>
-          
-             </div>
-            
-             <div className='description'>
-                  <h2>Gaming club manager </h2>
-                  <p>
-                   i manage a gaming club that focuses on console gaming, offering a wide variety of gaming experiences on PlayStation consoles, including PS5, PS4, and PS3. Your business provides an engaging and social atmosphere for gamers, where members can play the latest and classic titles, participate in tournaments, and enjoy a community of fellow gaming enthusiasts. Your club likely offers a comfortable space equipped with the latest technology, high-quality gaming equipment, and competitive events, making it a go-to spot for both casual and serious gamer
-                  </p>
-             </div>
-
-
-        </div>
-
-
-
-
-
-        <div className='exp'>
-           
-           <h3>2023</h3>
-          
-           <div className='baricons'>
-           <div class="glowing-ball"></div>
-     
-           </div>
-          
-           <div className='description'>
-                <h2>Freelancer </h2>
-                <p>
-                 i manage a gaming club that focuses on console gaming, offering a wide variety of gaming experiences on PlayStation consoles, including PS5, PS4, and PS3. Your business provides an engaging and social atmosphere for gamers, where members can play the latest and classic titles, participate in tournaments, and enjoy a community of fellow gaming enthusiasts. Your club likely offers a comfortable space equipped with the latest technology, high-quality gaming equipment, and competitive events, making it a go-to spot for both casual and serious gamer
-                </p>
-           </div>
-
-
+    <div className="experience-container" id="experiences"  >
+      <h2>Experience</h2>
+      <div className="experience-list">
+        {experiences.map((exp, index) => (
+          <div key={index} className="experience-item">
+            <div className="experience-dot"></div>
+            <div className="experience-details">
+              <h3>{exp.title} <span>| {exp.company}</span></h3>
+              <p className="experience-period">{exp.period}</p>
+              <ul>
+                {exp.description.map((desc, i) => (
+                  <li key={i}>{desc}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
+    </div>
+  );
+};
 
-
-      <div className='exp'>
-           
-             <h3>2022</h3>
-            
-             <div className='baricons'>
-             <div class="glowing-ball"></div>
-             <div className='bar'></div>
-             </div>
-            
-             <div className='description'>
-                  <h2>Junior Developer</h2>
-                  <p>
-                   i manage a gaming club that focuses on console gaming, offering a wide variety of gaming experiences on PlayStation consoles, including PS5, PS4, and PS3. Your business provides an engaging and social atmosphere for gamers, where members can play the latest and classic titles, participate in tournaments, and enjoy a community of fellow gaming enthusiasts. Your club likely offers a comfortable space equipped with the latest technology, high-quality gaming equipment, and competitive events, making it a go-to spot for both casual and serious gamer
-                  </p>
-             </div>
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-    </div>    
-        
-        
-        
-        </div>
-  )
-}
-
-export default Experience
+export default Experience;

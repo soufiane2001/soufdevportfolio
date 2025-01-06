@@ -1,141 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
+/* Header Styling */
 .header {
     display: flex;
-    justify-content: space-around; /* Adjusted for more control */
+    justify-content: space-between;
     align-items: center;
-    padding: 30px;
-    position: relative; /* Needed for absolute positioning of menu */
+    padding: 30px 70px;
+    color: wheat;
+    position: relative;
 }
 
-img {
-    width: 130px;
-    height: 50px;
+.header h3 {
+    font-size: 20pt;
 }
 
-ul {
+/* Menu Styling */
+.header ul {
     display: flex;
-    gap: 50px;
-}
-
-ul li {
-    font-size: 13pt;
-    font-weight: 500;
-    margin-left: 10px;
-    color: rgb(118, 118, 118);
+    align-items: center;
     list-style: none;
-    font-family: "Raleway", sans-serif;
+    gap: 20px;
+}
+
+.header ul li {
+    color: white;
+    font-size: 13pt;
+    margin-right: 45px;
     font-weight: 700;
-
-}
-
-ul li:hover {
-    color: rgb(207, 203, 203);
     cursor: pointer;
 }
 
-.search-container {
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    background-color: #474a4f;
+.header ul li button {
+    background: none;
+    color: rgb(236, 99, 1);
+    border: 1px solid rgb(231, 78, 1);
+    padding: 12px 25px;
+    font-size: 13pt;
+    font-weight: 800;
     border-radius: 10px;
-    padding: 10px 15px;
-    width: 150px;
 }
-
-.search-container input {
-    background-color: transparent;
-    border: none;
-    color: #d8d8d8;
-    font-size: 14px;
-    padding-right: 34px;
-    font-weight: 600;
-    outline: none;
-    font-family: "Raleway", sans-serif;
-
-}
-
-#sr{
-    margin-left: 120px;
+.header ul li button:hover {
+    background: orangered;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(231, 78, 1);
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: 800;
+    border-radius: 10px;
 }
 
 
-.search-container input::placeholder {
-    color: #afafaf;
-}
 
-.search-container .search-icon {
-    font-size: 18px;
-    color: #AAA;
-}
-
-
-.burger-icon {
+/* Burger Menu Styling */
+.burger-menu {
     display: none;
-    font-size: 24px;
-    color: #FFF;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 950px) {
-    ul {
+.burger-menu div {
+    background: white;
+    height: 4px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .header ul {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;
-        right: 0;
-        background-color: #3E3E3E;
-        width: 200px;
-        padding: 10px;
-        border-radius: 5px;
+        top: 70px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 10;
     }
 
-    ul.open {
+    .header ul.open {
         display: flex;
-        z-index: 54;
     }
 
-    .burger-icon {
-        display: block;
-        margin-left: 15px;
-    }
-
-    .search-container {
-        display: flex; /* Keep the search input visible on mobile */
-
-        margin-left: 10px; /* Add some space from the burger icon */
+    .burger-menu {
+        display: flex;
     }
 }
-
-
-
-
-
-
-/* Responsive for Mobile */
-@media (max-width: 480px) {
-.header img{
-    width: 70px;
-    height: 30px;
-}
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

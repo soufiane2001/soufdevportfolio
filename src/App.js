@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import './index.css';
+import Header from './header/header'
 
-import './App.css';
-import Header from './header/header';
-import Hero from './hero/hero';
-import About from './about/About';
-import Skills from './skills/Skills';
+import Hero from './hero/hero'
+
 import Portfolio from './portfolio/Portfolio';
-import Experience from './Experience/Experience';
 import Testimonials from './Testimonials/Testimonials';
+import Skills from './skills/Skills';
+import Experience from './Experience/Experience';
+import About from './about/About';
 
-function App() {
- 
-   
-  
+function Home(){
   return (
-  <>
-  <Header/>
+    <>
+
+
+<Header/>
   <Hero/>
   <About/>
-<Skills/>
-<Portfolio/>
-<Experience/>
+  <Skills/>
+   <Portfolio/>
+  <Experience/>
 <Testimonials/>
+ 
   </>
   );
-}
+};
 
-export default App;
+export default Home;

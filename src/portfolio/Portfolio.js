@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './style.css'
 
 
@@ -6,123 +6,100 @@ import pr1 from '../assets/pr1.JPG'
 import pr6 from '../assets/pr6.png'
 import pr7 from '../assets/pr7.JPG'
 import pr8 from '../assets/pr8.JPG'
-function Portfolio() {
-  return (
-    <div className='portfolios'>
-      <h1>Portfolio</h1>
+import pr4 from '../assets/pr4.JPG'
+import pr3 from '../assets/pr3.JPG'
 
-<div className='portfolio'>
+import { RiPriceTag2Line } from 'react-icons/ri'
 
-<div class="image-container">
-  <img src={"https://play-lh.googleusercontent.com/6RcPDQwPihY591Axu7e6mHhMZ22Q-dqeI5z9GkJiu4Hc-Xha77E6uoeplstYuv5RcnE"} alt="Image" />
-  <div class="overlay">
-    <h2 class="title">Cash App (client)</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
+
+
+
+const portfolioData = [
+  {
+    title: 'soufianeMarketplace',
+    image: pr1, // Replace with actual image URL
+    link: 'https://youtu.be/tq9h_W0ZTQc?si=Nr9cC9gJummgs3-3',
+  },
+  {
+    title: 'Horoslove dating app ',
+    image:pr6, // Replace with actual image URL
+    link: 'https://youtube.com/shorts/qYWI6MkadZk?feature=share',
+  }, {
+    title: '"ساعة مع الحمرا',
+    image:pr3, // Replace with actual image URL
+    link: 'https://youtu.be/HBFPssMi82Q?si=eI5bEszvoHjNgpC-',
+  },
+  {
+    title: 'Cash management app',
+    image: pr7, // Replace with actual image URL
+    link: 'https://youtu.be/F3Pjh49qdzE?si=ePMNf5A0thlc-QF0',
+  }, {
+    title: 'Rebyart portfolio',
+    image:pr4, // Replace with actual image URL
+    link: 'https://youtu.be/RTqaLIWhK0U?si=BJzK3ApG5L34T0b3',
+  },
+  {
+    title: 'ecommerce cash on delivery',
+    image: pr8, // Replace with actual image URL
+    link: 'https://youtu.be/gj7IWaDnEXI?si=oyTYeQvaS2uWrNmL',
+  },
  
- </div>
-  </div>
-</div>
+];
 
+const Portfolio = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(portfolioData.length / itemsPerPage);
 
-<div class="image-container">
-  <img src="https://www.algerie-eco.com/wp-content/uploads/2018/02/marketplace-en-algerie.jpg" alt="Image" />
-  <div class="overlay">
-    <h2 class="title">MarketPlace</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-    <a href=''><i className='fa fa-github'></i></a>
- </div>
-  </div>
-</div>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
+    }, 8000); // Change page every 4 seconds
+    return () => clearInterval(interval);
+  }, [totalPages]);
 
-<div class="image-container">
-  <img src="https://www.noiise.com/wp-content/uploads/2023/11/definition-ecommerce.jpg" alt="Image" />
-  <div class="overlay">
-    <h2 class="title">Ecommerce</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-    <a href=''><i className='fa fa-github'></i></a>
- </div>
-  </div>
-</div>
+  const getCurrentPortfolio = () => {
+    const startIndex = currentIndex * itemsPerPage;
+    return portfolioData.slice(startIndex, startIndex + itemsPerPage);
+  };
 
-<div class="image-container">
-  <img src="https://img.freepik.com/premium-vector/chat-app-logo-design-template-can-be-used-icon-chat-application-logo_605910-1724.jpg" alt="Image" />
-  <div class="overlay">
-    <h2 class="title">reservation app</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-    <a href=''><i className='fa fa-github'></i></a>
- </div>
-  </div>
-</div>
-
-<div class="image-container">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNppN7vM3QQlf6oA48xueJWpNfuPJANUV09g&s" alt="Image" />
-  <div class="overlay">
-  <h2 class="title">Rent mobile App</h2>
-  <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-    <a href=''><i className='fa fa-github'></i></a>
- </div>
-  </div>
-</div>
-
-
-
-
-
-
-<div class="image-container">
-  <img src={pr6} alt="Image" />
-  <div class="overlay">
-    <h2 class="title">Dating App</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-    <a href=''><i className='fa fa-github'></i></a>
- </div>
-  </div>
-</div>
-
-
-
-<div class="image-container">
-  <img src={pr7} alt="Image" />
-  <div class="overlay">
-    <h2 class="title">Sport News App (client) </h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-  
- </div>
-  </div>
-</div>
-
-
-
-
-<div class="image-container">
-  <img src={pr8} alt="Image" />
-  <div class="overlay">
-    <h2 class="title">Painter Portfolio (client)</h2>
-    <div className='links'>
-    <a href=''><i className='fa fa-youtube'></i></a>
-
- </div>
-  </div>
-</div>
-
-
-
-
-
-
-</div>
-   
-
-
+  return (
+    <div className="portfolio" id="portfolio">
+      <h2>Portfolio</h2>
+      <p>
+       this is a sample of my porojects done you can watch details 
+       </p>
+      <div className="portfolio-container">
+        {getCurrentPortfolio().map((item, index) => (
+          <div key={index} className="portfolio-item">
+          <div className="cadre">
+            <img src={item.image} alt={item.title} />
+            </div>
+            <div className="portfolio-info">
+              <h3>{item.title}</h3>
+              <a href={item.link} className="view-details">
+                View Details
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pagination"   >
+        {Array.from({ length: totalPages }).map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></span>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
+
+
+
+
+
 
 export default Portfolio
