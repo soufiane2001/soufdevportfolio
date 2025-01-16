@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-
+import souf from './IMG_7895.jpeg';
 
 const About = () => {
   return (
@@ -8,7 +8,7 @@ const About = () => {
       <div className="about-content">
         {/* Left Section: Image with Play Button */}
         <div className="about-image-section">
-          <img src={"https://scontent.fcmn1-2.fna.fbcdn.net/v/t39.30808-6/368036462_731235105682386_832498792598238142_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEpkNgJXh8Zmye23O4zSB2dg8YNo522El6Dxg2jnbYSXtl9PvORKUmYBuyYH0O-WWi_NZprqt8ua3kZ8y0aHgQV&_nc_ohc=8Lr0t9lz3HgQ7kNvgERWH9W&_nc_oc=AdgOaVyiNcb-hRM-GcV8qvxC0IENofvzZALPyIzmaft_z7_XImWlR68op-GQ20QaHpw&_nc_zt=23&_nc_ht=scontent.fcmn1-2.fna&_nc_gid=AmgDxoRvxpgV2uYIWd31nYH&oh=00_AYCw37uaLQKM8dqk9UFQHaX6lASgBGdkyy3jRlOPtN39jA&oe=6781AA0A"} alt="About Us" className="about-image" />
+          <img src={souf} alt="About Us" className="about-image"
          
         </div>
 
