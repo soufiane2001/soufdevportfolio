@@ -69,9 +69,14 @@ const Hero = () => {
   <div>
     <h3>Follow me</h3>
    <div>
+         <a href="https://web.facebook.com/soufianski2001" class="fa fa-facebook">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"/>
-    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"/>
+        </a>
+             <a href="https://www.linkedin.com/in/soufiane-boutatss-96400a1ba/" class="">
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"/></a>
+            <a href="https://github.com/soufiane2001" class="">
     <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"/>
+        </a>
 
    </div>
   </div>
