@@ -100,3 +100,52 @@
 
   }
   
+
+  .custom-audio-player {
+    width: 100%;
+    max-width: 300px;
+    background: none;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+/* Ensure media controls are properly displayed */
+.custom-audio-player::-webkit-media-controls-panel {
+    background-color: #a098ac;
+    border-radius: 10px;
+}
+
+/* Fix Play Button Visibility */
+.custom-audio-player::-webkit-media-controls-play-button,
+.custom-audio-player::-webkit-media-controls-pause-button {
+    filter: none !important; /* Remove invert */
+    opacity: 1 !important; /* Ensure visibility */
+}
+
+/* Volume slider styling */
+.custom-audio-player::-webkit-media-controls-volume-slider {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+/* Time Display */
+.custom-audio-player::-webkit-media-controls-current-time-display,
+.custom-audio-player::-webkit-media-controls-time-remaining-display {
+    color: #333;
+    font-size: 14px;
+}
+
+/* Make sure controls are visible on all browsers */
+.custom-audio-player::-webkit-media-controls {
+    display: flex;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-audio-player {
+        max-width: 250px;
+    }
+}
+
+  
