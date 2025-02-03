@@ -54,7 +54,7 @@ const Portfolio = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % totalPages);
-    }, 8000); // Change page every 4 seconds
+    }, 14000); // Change page every 4 seconds
     return () => clearInterval(interval);
   }, [totalPages]);
 
