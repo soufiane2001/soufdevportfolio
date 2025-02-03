@@ -75,7 +75,7 @@ const Hero = () => {
              <a href="https://www.linkedin.com/in/soufiane-boutatss-96400a1ba/" class="">
     <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"/></a>
             <a href="https://github.com/soufiane2001" class="">
-    <img src="https://rock-the-prototype.com/wp-content/uploads/2022/01/github-repositories-1.jpg"/>
+    <img src="https://velog.velcdn.com/images/bki654/post/7d95db47-f1ec-4a84-9130-ef3500b7865b/image.jpg"/>
         </a>
 
    </div>
