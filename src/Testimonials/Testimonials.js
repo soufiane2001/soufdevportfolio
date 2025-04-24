@@ -8,7 +8,7 @@ const testimonialsData = [
   {
     name: 'Karim Washington',
     role: 'Animator of Programmes',
-    email: 'karim@example.com',
+    email: 'karim1980wash@gmail.com',
     text: "I had the pleasure of working with Soufiane on my website project, and I couldn't be more satisfied with the results...",
     image: karim,
  
@@ -16,7 +16,7 @@ const testimonialsData = [
   {
     name: 'Soukaina',
     role: 'agent in call center',
-    email: 'maryam@gmail.com',
+    email: 'souka1994@gmail.com',
     text: "Outstanding job! The project was finished ahead of schedule, and everything functions perfectly.",
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzsPB4WeFgOskELDGf66Ky10YNknt0xUUgbQ&s',
     audioUrl: soukaudio,
@@ -24,7 +24,7 @@ const testimonialsData = [
   {
     name: 'Michel Reby',
     role: 'Painter',
-    email: 'michel@example.com',
+    email: 'michelreby@gmail.com',
     text: "Working with Soufiane on the Reby Art website has been a fantastic experience! He took our artistic vision and brought it to life...",
     image: michel,
   
@@ -32,7 +32,7 @@ const testimonialsData = [
   {
     name: 'Hind Elhassouni',
     role: 'CEO of IT Agency',
-    email: 'hind@example.com',
+    email: 'hindelhassouni@gmail.com',
     text: "I view setbacks as learning opportunities. When a project doesn’t go as planned, I reflect on what went wrong...",
     image: hinda,
  
@@ -40,7 +40,7 @@ const testimonialsData = [
   {
     name: 'Maryam',
     role: 'Student',
-    email: 'maryam@example.com',
+    email: 'maryam414.gari@gmail.com',
     text: "Excellent work! The project was completed ahead of schedule, and everything works flawlessly.",
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzsPB4WeFgOskELDGf66Ky10YNknt0xUUgbQ&s',
 
