@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { FaReact, FaLaravel, FaPhp, FaBootstrap, FaAndroid } from 'react-icons/fa';
+import { FaReact, FaLaravel, FaPhp, FaBootstrap, FaAndroid,FaWordpress  } from 'react-icons/fa';
 import { SiExpo, SiMysql, SiNextdotjs, SiFirebase, SiTailwindcss,SiTypescript  } from 'react-icons/si';
 
 
@@ -13,6 +13,7 @@ const skillsData = [
   { name: 'Typescript', icon: <SiTypescript/>, level: 7 },
   { name: 'Android Studio', icon: <FaAndroid />, level: 5 },
   { name: 'PHP', icon: <FaPhp />, level: 7 },
+    { name: 'Wordpress', icon: <FaWordpress  />, level: 5 },
   { name: 'Next.js', icon: <SiNextdotjs />, level: 7 },
   { name: 'Firebase', icon: <SiFirebase />, level: 6 },
   { name: 'Bootstrap', icon: <FaBootstrap />, level: 9 },
