@@ -30,14 +30,6 @@ const testimonialsData = [
   
   },
   {
-    name: 'Hind Elhassouni',
-    role: 'CEO of IT Agency',
-    email: 'hindelhassouni@gmail.com',
-    text: "I view setbacks as learning opportunities. When a project doesn’t go as planned, I reflect on what went wrong...",
-    image: hinda,
- 
-  },
-  {
     name: 'Maryam',
     role: 'Student',
     email: 'maryam414.gari@gmail.com',
