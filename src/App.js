@@ -9,6 +9,7 @@ import Testimonials from './Testimonials/Testimonials';
 import Skills from './skills/Skills';
 import Experience from './Experience/Experience';
 import About from './about/About';
+import Footer from '../Footer';
 
 function Home(){
   return (
@@ -22,6 +23,7 @@ function Home(){
    <Portfolio/>
   <Experience/>
 <Testimonials/>
+    <Footer/>
  
   </>
   );
