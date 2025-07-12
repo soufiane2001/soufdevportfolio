@@ -5,15 +5,7 @@ const CustomFooter = () => {
 
   return (
     <div className="portfolio-app">
-      <main className="portfolio-content">
-        <div className="portfolio-card">
-          <h1 className="portfolio-title">Portfolio Footer Preview</h1>
-          <p className="portfolio-description">
-            This preview shows the custom footer component with unique CSS classes.
-            Scroll down to see the footer implementation.
-          </p>
-        </div>
-      </main>
+    
       
       <footer className="portfolio-footer">
         <div className="footer-container">
