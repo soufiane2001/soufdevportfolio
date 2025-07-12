@@ -29,6 +29,14 @@ const testimonialsData = [
     image: michel,
   
   },
+    {
+    name: 'Hind El hassouni ',
+    role: 'ceo agence',
+    email: 'elhassounihind39@gmail.com',
+    text: "Working with Soufiane on the Reby Art website has been a fantastic experience! He took our artistic vision and brought it to life...",
+    image: hinda,
+  
+  },
   {
     name: 'Maryam',
     role: 'Student',
