@@ -23,7 +23,7 @@ function Home(){
    <Portfolio/>
   <Experience/>
 <Testimonials/>
-    <Footer/>
+
  
   </>
   );
