@@ -1,231 +1,136 @@
 import React from 'react';
-import { FaEnvelope, FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
-const Footer = () => {
+const CustomFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="app">
-      <div className="content">
-        <header>
-          <div className="logo">
-            <FaGithub className="icon" />
-          </div>
-          <h1>Soufiane Boutats</h1>
-          <p className="subtitle">Full Stack Developer & UI/UX Designer</p>
-        </header>
-        
-        <div className="card-container">
-          <div className="card">
-            <h2><FaGithub className="card-icon" /> Development Skills</h2>
-            <p>I create responsive, high-performance web applications using modern technologies.</p>
-            <div className="tech-stack">
-              <span className="tech">React</span>
-              <span className="tech">Node.js</span>
-              <span className="tech">Express</span>
-              <span className="tech">MongoDB</span>
-            </div>
-          </div>
-          
-          <div className="card">
-            <h2><FaGithub className="card-icon" /> Design Skills</h2>
-            <p>I design beautiful, intuitive user interfaces with a focus on user experience.</p>
-            <div className="tech-stack">
-              <span className="tech">Figma</span>
-              <span className="tech">UI/UX</span>
-              <span className="tech">Tailwind CSS</span>
-              <span className="tech">Responsive Design</span>
-            </div>
-          </div>
+    <div className="portfolio-app">
+      <main className="portfolio-content">
+        <div className="portfolio-card">
+          <h1 className="portfolio-title">Portfolio Footer Preview</h1>
+          <p className="portfolio-description">
+            This preview shows the custom footer component with unique CSS classes.
+            Scroll down to see the footer implementation.
+          </p>
         </div>
-      </div>
+      </main>
       
-      <footer className="footer">
+      <footer className="portfolio-footer">
         <div className="footer-container">
           {/* Contact Section */}
-          <div className="contact-section">
-            <h3 className="footer-heading">
-              Get in Touch
+          <div className="footer-contact-section">
+            <h3 className="footer-contact-title">
+              Connect With Me
             </h3>
-            <div className="contact-links">
+            <div className="footer-contact-links">
               <a 
                 href="mailto:contact@soufianeboutatssdev.com" 
-                className="email-link"
+                className="footer-email-link"
                 aria-label="Email"
               >
-                <FaEnvelope className="email-icon" />
-                <span>contact@soufianeboutatssdev.com</span>
+                <span className="footer-email-icon">✉️</span>
+                <span className="footer-email-text">contact@soufianeboutatssdev.com</span>
               </a>
               
-              <div className="social-links">
+              <div className="footer-social-links">
                 <a 
                   href="https://github.com/soufianeboutat" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="footer-social-link"
                   aria-label="GitHub"
                 >
-                  <FaGithub className="social-icon" />
+                  <span className="footer-social-icon">🐱</span>
                 </a>
                 <a 
                   href="https://linkedin.com/in/soufianeboutat" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="footer-social-link"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn className="social-icon" />
+                  <span className="footer-social-icon">👔</span>
                 </a>
                 <a 
                   href="https://twitter.com/soufianeboutat" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="footer-social-link"
                   aria-label="Twitter"
                 >
-                  <FaTwitter className="social-icon" />
+                  <span className="footer-social-icon">🐦</span>
                 </a>
               </div>
             </div>
           </div>
 
           {/* License and Copyright */}
-          <div className="license-section">
-            <div className="copyright">
-              <p>© {currentYear} Soufiane Boutats. All Rights Reserved.</p>
-              <p className="license-info">Code licensed under MIT License. Content owned by Soufiane Boutats.</p>
+          <div className="footer-legal-section">
+            <div className="footer-copyright">
+              <p className="footer-copyright-text">© {currentYear} Soufiane Boutats. All Rights Reserved.</p>
+              <p className="footer-license-text">Code licensed under MIT License. Content owned by Soufiane Boutats.</p>
             </div>
             
-            <div className="built-with">
-              <p>Designed and built with React & Tailwind CSS</p>
+            <div className="footer-built-with">
+              <p className="footer-built-text">Crafted with React & Custom CSS</p>
             </div>
           </div>
         </div>
       </footer>
       
       <style jsx>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .app {
+        .portfolio-app {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
-          background: linear-gradient(135deg, #1a202c, #2d3748);
-          color: #e2e8f0;
+          background: linear-gradient(135deg, #1a1f2d, #0d1117);
+          color: #e6edf3;
+          font-family: 'Segoe UI', 'Roboto', sans-serif;
         }
         
-        .content {
+        .portfolio-content {
           flex: 1;
-          max-width: 1200px;
-          width: 100%;
-          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           padding: 2rem;
         }
         
-        header {
+        .portfolio-card {
+          background: rgba(22, 27, 34, 0.8);
+          border-radius: 16px;
+          padding: 3rem;
+          max-width: 800px;
+          width: 100%;
           text-align: center;
-          padding: 40px 20px;
-          margin-bottom: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(240, 246, 252, 0.1);
+          backdrop-filter: blur(10px);
         }
         
-        .logo {
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          width: 80px;
-          height: 80px;
-          background: rgba(11, 197, 234, 0.1);
-          border-radius: 50%;
-          margin-bottom: 20px;
-        }
-        
-        .logo .icon {
+        .portfolio-title {
           font-size: 2.5rem;
-          color: #0bc5ea;
-        }
-        
-        h1 {
-          font-size: 2.5rem;
-          margin-bottom: 10px;
-          background: linear-gradient(90deg, #0bc5ea, #00c3ff);
+          margin-bottom: 1.5rem;
+          background: linear-gradient(90deg, #58a6ff, #2ea043);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          font-weight: 700;
         }
         
-        .subtitle {
+        .portfolio-description {
           font-size: 1.2rem;
-          color: #a0aec0;
+          color: #8b949e;
+          line-height: 1.6;
           max-width: 600px;
           margin: 0 auto;
         }
         
-        .card-container {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 30px;
-          margin-top: 30px;
-        }
-        
-        .card {
-          background: rgba(26, 32, 44, 0.7);
-          border-radius: 15px;
-          padding: 30px;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(74, 85, 104, 0.3);
-        }
-        
-        .card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-        
-        .card h2 {
-          color: #0bc5ea;
-          margin-bottom: 20px;
-          font-size: 1.5rem;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-        
-        .card-icon {
-          font-size: 1.3rem;
-        }
-        
-        .card p {
-          color: #cbd5e0;
-          margin-bottom: 15px;
-          line-height: 1.6;
-        }
-        
-        .tech-stack {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin-top: 20px;
-        }
-        
-        .tech {
-          background: rgba(11, 197, 234, 0.15);
-          color: #0bc5ea;
-          padding: 5px 15px;
-          border-radius: 20px;
-          font-size: 0.9rem;
-        }
-        
-        /* Footer Styles */
-        .footer {
-          background: #1a202c;
-          color: #e2e8f0;
-          padding: 3rem 1rem 1.5rem;
-          border-top: 1px solid rgba(74, 85, 104, 0.5);
+        /* Unique Footer Styles */
+        .portfolio-footer {
+          background: linear-gradient(to right, #0d1117, #161b22);
+          color: #c9d1d9;
+          padding: 3rem 1.5rem 1.5rem;
+          border-top: 1px solid rgba(240, 246, 252, 0.1);
         }
         
         .footer-container {
@@ -234,120 +139,174 @@ const Footer = () => {
         }
         
         /* Contact Section */
-        .contact-section {
-          margin-bottom: 2rem;
+        .footer-contact-section {
+          margin-bottom: 2.5rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid rgba(240, 246, 252, 0.1);
         }
         
-        .footer-heading {
-          font-size: 1.4rem;
-          font-weight: 700;
-          margin-bottom: 1.5rem;
-          padding-bottom: 0.5rem;
+        .footer-contact-title {
+          font-size: 1.6rem;
+          font-weight: 600;
+          margin-bottom: 1.8rem;
+          color: #58a6ff;
+          position: relative;
           display: inline-block;
-          border-bottom: 2px solid #0bc5ea;
         }
         
-        .contact-links {
+        .footer-contact-title::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 60%;
+          height: 3px;
+          background: linear-gradient(to right, #58a6ff, #2ea043);
+          border-radius: 3px;
+        }
+        
+        .footer-contact-links {
           display: flex;
           flex-wrap: wrap;
-          gap: 1.5rem;
+          gap: 2rem;
           align-items: center;
         }
         
-        .email-link {
+        .footer-email-link {
           display: flex;
           align-items: center;
-          gap: 0.7rem;
-          color: #e2e8f0;
+          gap: 0.8rem;
+          color: #c9d1d9;
           text-decoration: none;
-          transition: color 0.3s ease;
+          transition: all 0.3s ease;
+          padding: 0.8rem 1.2rem;
+          border-radius: 8px;
+          background: rgba(33, 38, 45, 0.5);
+        }
+        
+        .footer-email-link:hover {
+          background: rgba(48, 54, 61, 0.7);
+          transform: translateY(-3px);
+          color: #58a6ff;
+          box-shadow: 0 5px 15px rgba(88, 166, 255, 0.1);
+        }
+        
+        .footer-email-icon {
+          font-size: 1.5rem;
+        }
+        
+        .footer-email-text {
           font-size: 1.1rem;
+          font-weight: 500;
         }
         
-        .email-link:hover {
-          color: #0bc5ea;
-        }
-        
-        .email-icon {
-          font-size: 1.3rem;
-        }
-        
-        .social-links {
+        .footer-social-links {
           display: flex;
-          gap: 1.2rem;
+          gap: 1.5rem;
         }
         
-        .social-link {
+        .footer-social-link {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 45px;
-          height: 45px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
-          color: #e2e8f0;
+          background: rgba(33, 38, 45, 0.5);
+          color: #c9d1d9;
           transition: all 0.3s ease;
+          font-size: 1.5rem;
+          text-decoration: none;
         }
         
-        .social-link:hover {
-          background: #0bc5ea;
-          transform: translateY(-3px);
+        .footer-social-link:hover {
+          transform: translateY(-5px) scale(1.1);
+          background: linear-gradient(135deg, #1f6feb, #2ea043);
+          box-shadow: 0 5px 20px rgba(31, 111, 235, 0.3);
+          color: white;
         }
         
-        .social-icon {
-          font-size: 1.3rem;
-        }
-        
-        /* License and Copyright */
-        .license-section {
-          border-top: 1px solid rgba(74, 85, 104, 0.5);
+        /* Legal Section */
+        .footer-legal-section {
           padding-top: 2rem;
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 1.5rem;
         }
         
-        .copyright {
-          font-size: 0.9rem;
-          color: #a0aec0;
+        .footer-copyright {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
         }
         
-        .license-info {
+        .footer-copyright-text {
+          font-size: 0.95rem;
+          color: #8b949e;
+        }
+        
+        .footer-license-text {
           font-size: 0.85rem;
-          color: #718096;
-          margin-top: 0.4rem;
+          color: #6e7681;
         }
         
-        .built-with {
-          font-size: 0.9rem;
-          color: #a0aec0;
+        .footer-built-with {
+          font-size: 0.95rem;
+          color: #8b949e;
+          text-align: right;
+        }
+        
+        .footer-built-text {
+          padding: 0.5rem 1rem;
+          background: rgba(33, 38, 45, 0.5);
+          border-radius: 6px;
+          display: inline-block;
         }
         
         /* Responsive Design */
         @media (min-width: 768px) {
-          .license-section {
+          .footer-legal-section {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
           }
+          
+          .footer-contact-links {
+            justify-content: space-between;
+          }
         }
         
-        @media (max-width: 768px) {
-          .contact-links {
+        @media (max-width: 767px) {
+          .footer-contact-links {
             flex-direction: column;
             align-items: flex-start;
+            gap: 1.5rem;
           }
           
-          h1 {
+          .footer-email-link {
+            width: 100%;
+          }
+          
+          .footer-built-with {
+            text-align: left;
+          }
+          
+          .portfolio-card {
+            padding: 2rem 1.5rem;
+          }
+          
+          .portfolio-title {
             font-size: 2rem;
           }
-          
-          .subtitle {
-            font-size: 1rem;
+        }
+        
+        @media (max-width: 480px) {
+          .portfolio-title {
+            font-size: 1.8rem;
           }
           
-          .card {
-            padding: 20px;
+          .footer-email-text {
+            font-size: 1rem;
           }
         }
       `}</style>
@@ -355,4 +314,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default CustomFooter;
