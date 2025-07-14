@@ -47,7 +47,7 @@ const Hero = () => {
 
       <h2><span>Web & mobile Developer</span></h2>
       <button className="contact" onClick={() =>  window.location.href = 'mailto:sboutatss@gmail.com'} >Contact me</button> 
-      <button className="cv" onClick={() =>  window.location.href =`${process.env.PUBLIC_URL}/Cv25.pdf`} >Download cv</button>
+      <button className="cv" onClick={() =>  window.location.href =`${process.env.PUBLIC_URL}/cvsoufiane.pdf`} >Download cv</button>
       <div className="herofooter">
 
       <div className="border">
