@@ -6,7 +6,6 @@ import pr7 from '../assets/pr7.JPG';
 import pr8 from '../assets/pr8.JPG';
 import pr4 from '../assets/pr4.JPG';
 import pr3 from '../assets/pr3.JPG';
-import { RiPriceTag2Line } from 'react-icons/ri';
 import { MdClose } from 'react-icons/md';
 
 const portfolioData = [
@@ -42,7 +41,6 @@ const portfolioData = [
   },
 ];
 
-// Function to convert YouTube URLs to embed format
 const convertToEmbedUrl = (url) => {
   const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
   const match = url.match(regExp);
@@ -85,34 +83,37 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="portfolio-container">
-      <div className="portfolio-header">
-        <h2>Portfolio</h2>
-        <p>This is a sample of my projects done. You can watch details</p>
-      </div>
+    <section className="portfolio">
+      <h2>Portfolio</h2>
+      <p>This is a sample of my projects done. You can watch details</p>
 
-      <div className="portfolio-items">
+      <div className="portfolio-container">
         {getCurrentPortfolio().map((item, index) => (
           <div className="portfolio-item" key={index}>
-            <img src={item.image} alt={item.title} />
-            <div className="item-overlay">
-              <h3>{item.title}</h3>
-              <button 
-                className="view-details-btn"
-                onClick={() => handleVideoOpen(item.link)}
-              >
-                View Details
-              </button>
+            <div className="cadre">
+              <img src={item.image} alt={item.title} />
+              <div className="portfolio-info">
+                <h3>{item.title}</h3>
+                <a 
+                  className="view-details"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleVideoOpen(item.link);
+                  }}
+                >
+                  View Details
+                </a>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="portfolio-pagination">
+      <div className="pagination">
         {Array.from({ length: totalPages }).map((_, index) => (
-          <button
+          <span
             key={index}
-            className={index === currentIndex ? 'active' : ''}
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
             onClick={() => setCurrentIndex(index)}
           />
         ))}
@@ -126,11 +127,8 @@ const Portfolio = () => {
             </button>
             <div className="video-container">
               <iframe
-                width="100%"
-                height="100%"
                 src={selectedVideo}
                 title="YouTube video player"
-                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
@@ -138,7 +136,7 @@ const Portfolio = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
