@@ -29,12 +29,12 @@ const portfolioData = [
     image: pr7,
     link: 'https://youtu.be/F3Pjh49qdzE?si=ePMNf5A0thlc-QF0',
   },
-  
+  {
     title: 'Site Web ZO Équestre',
     image: pr4,
     link: 'https://youtu.be/Mu9REuAFB0s?si=p86POgNHuPYxTf_b',
   },
-  
+  {
     title: 'Rebyart portfolio',
     image: pr4,
     link: 'https://youtu.be/RTqaLIWhK0U?si=BJzK3ApG5L34T0b3',
@@ -48,7 +48,7 @@ const portfolioData = [
     title: 'ecommerce cash on delivery',
     image: pr8,
     link: 'https://youtu.be/gj7IWaDnEXI?si=oyTYeQvaS2uWrNmL',
-  },
+  }
 ];
 
 const convertToEmbedUrl = (url) => {
