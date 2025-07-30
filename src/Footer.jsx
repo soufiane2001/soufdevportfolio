@@ -29,7 +29,7 @@ export default function Footer() {
 
   const styles = {
     footer: {
-      background: '#291c4a',
+    
       color: '#fff',
       padding: '40px 20px',
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
