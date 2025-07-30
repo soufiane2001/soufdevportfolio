@@ -29,57 +29,66 @@ export default function Footer() {
 
   const styles = {
     footer: {
-      backgroundColor: '#121212',
-      color: '#eee',
+      background: '#291c4a',
+      color: '#fff',
+      padding: '40px 20px',
       fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      padding: 24,
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
-      gap: 24,
+      gap: 30,
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+      borderRadius: '10px 10px 0 0',
     },
     legal: {
       flex: '1 1 300px',
+      fontWeight: 600,
       fontSize: 14,
       lineHeight: 1.5,
     },
     legalLink: {
-      color: '#f0a500',
+      color: '#f39c12',
       textDecoration: 'none',
-      marginLeft: 12,
+      marginLeft: 10,
       cursor: 'pointer',
+      transition: 'color 0.3s ease',
+    },
+    legalLinkHover: {
+      color: '#fff',
     },
     contact: {
       flex: '1 1 350px',
       maxWidth: 400,
     },
     heading: {
-      fontSize: 18,
-      fontWeight: 600,
-      marginBottom: 16,
-      color: '#f0a500',
+      color: '#f39c12',
+      fontSize: 22,
+      fontWeight: 700,
+      marginBottom: 20,
     },
     label: {
       display: 'block',
-      marginBottom: 12,
       fontSize: 14,
+      marginBottom: 10,
+      fontWeight: 600,
     },
     input: {
       width: '100%',
       padding: 10,
-      borderRadius: 5,
-      border: '1px solid #333',
-      backgroundColor: '#1a1a1a',
-      color: '#eee',
+      borderRadius: 10,
+      border: '1px solid #555',
+      background: '#1a1a2e',
+      color: '#fff',
       fontSize: 14,
+      transition: 'border-color 0.3s ease',
       outline: 'none',
-      transition: 'border-color 0.3s',
+      boxSizing: 'border-box',
     },
     inputError: {
       borderColor: '#e74c3c',
     },
     inputFocus: {
-      borderColor: '#f0a500',
+      borderColor: '#f39c12',
     },
     errorMsg: {
       color: '#e74c3c',
@@ -89,44 +98,41 @@ export default function Footer() {
     textarea: {
       width: '100%',
       padding: 10,
-      borderRadius: 5,
-      border: '1px solid #333',
-      backgroundColor: '#1a1a1a',
-      color: '#eee',
+      borderRadius: 10,
+      border: '1px solid #555',
+      background: '#1a1a2e',
+      color: '#fff',
       fontSize: 14,
+      transition: 'border-color 0.3s ease',
       outline: 'none',
-      transition: 'border-color 0.3s',
       resize: 'vertical',
       minHeight: 90,
+      boxSizing: 'border-box',
     },
     button: {
-      backgroundColor: '#f0a500',
-      border: 'none',
-      borderRadius: 5,
-      padding: '12px 24px',
-      color: '#121212',
-      fontWeight: 'bold',
+      marginTop: 15,
+      padding: '12px 25px',
+      fontWeight: 700,
       fontSize: 16,
+      background: '#f39c12',
+      color: '#291c4a',
+      border: 'none',
+      borderRadius: 10,
       cursor: 'pointer',
-      transition: 'background-color 0.3s',
-      marginTop: 8,
+      transition: 'background 0.3s ease',
+    },
+    buttonHover: {
+      background: '#fff',
+      color: '#291c4a',
     },
   };
 
-  // Handle focus style on inputs (optional enhancement)
+  // State to handle focus & hover styles
   const [focus, setFocus] = useState({});
-
-  const onFocus = (field) => setFocus({ ...focus, [field]: true });
-  const onBlur = (field) => setFocus({ ...focus, [field]: false });
+  const [hoverBtn, setHoverBtn] = useState(false);
 
   const inputStyle = (field) => ({
     ...styles.input,
-    ...(errors[field] ? styles.inputError : {}),
-    ...(focus[field] ? styles.inputFocus : {}),
-  });
-
-  const textareaStyle = (field) => ({
-    ...styles.textarea,
     ...(errors[field] ? styles.inputError : {}),
     ...(focus[field] ? styles.inputFocus : {}),
   });
@@ -151,8 +157,8 @@ export default function Footer() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            onFocus={() => onFocus('name')}
-            onBlur={() => onBlur('name')}
+            onFocus={() => setFocus({...focus, name: true})}
+            onBlur={() => setFocus({...focus, name: false})}
             style={inputStyle('name')}
             placeholder="Votre nom"
           />
@@ -166,8 +172,8 @@ export default function Footer() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            onFocus={() => onFocus('email')}
-            onBlur={() => onBlur('email')}
+            onFocus={() => setFocus({...focus, email: true})}
+            onBlur={() => setFocus({...focus, email: false})}
             style={inputStyle('email')}
             placeholder="votre.email@example.com"
           />
@@ -180,19 +186,20 @@ export default function Footer() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            onFocus={() => onFocus('message')}
-            onBlur={() => onBlur('message')}
-            style={textareaStyle('message')}
+            onFocus={() => setFocus({...focus, message: true})}
+            onBlur={() => setFocus({...focus, message: false})}
+            style={inputStyle('message')}
             placeholder="Votre message"
+            rows={4}
           />
           {errors.message && <small style={styles.errorMsg}>{errors.message}</small>}
         </label>
 
         <button
           type="submit"
-          style={styles.button}
-          onMouseOver={e => (e.currentTarget.style.backgroundColor = '#cf8500')}
-          onMouseOut={e => (e.currentTarget.style.backgroundColor = '#f0a500')}
+          style={hoverBtn ? {...styles.button, ...styles.buttonHover} : styles.button}
+          onMouseEnter={() => setHoverBtn(true)}
+          onMouseLeave={() => setHoverBtn(false)}
         >
           Envoyer
         </button>
