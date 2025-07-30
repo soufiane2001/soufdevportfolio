@@ -6,10 +6,10 @@ export default function Footer() {
 
   const validate = () => {
     const errs = {};
-    if (!formData.name.trim()) errs.name = 'Name is required';
-    if (!formData.email.trim()) errs.email = 'Email is required';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) errs.email = 'Email is invalid';
-    if (!formData.message.trim()) errs.message = 'Message is required';
+    if (!formData.name.trim()) errs.name = 'Nom est requis';
+    if (!formData.email.trim()) errs.email = 'Email est requis';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) errs.email = 'Email invalide';
+    if (!formData.message.trim()) errs.message = 'Message est requis';
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -21,7 +21,7 @@ export default function Footer() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      alert(`Thanks, ${formData.name}! Your message has been received.`);
+      alert(`Merci, ${formData.name}! Votre message a bien été reçu.`);
       setFormData({ name: '', email: '', message: '' });
       setErrors({});
     }
@@ -29,91 +29,115 @@ export default function Footer() {
 
   const styles = {
     footer: {
-      backgroundColor: '#222',
+      backgroundColor: '#121212',
       color: '#eee',
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      padding: 24,
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
-      padding: '2rem',
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+      gap: 24,
     },
     legal: {
       flex: '1 1 300px',
-      marginBottom: '1rem',
-    },
-    legalP: {
-      margin: '0.3rem 0',
-      fontSize: '0.9rem',
+      fontSize: 14,
+      lineHeight: 1.5,
     },
     legalLink: {
-      color: '#aad8d3',
+      color: '#f0a500',
       textDecoration: 'none',
-      margin: '0 0.5rem',
+      marginLeft: 12,
       cursor: 'pointer',
     },
     contact: {
-      flex: '1 1 300px',
-      maxWidth: '400px',
+      flex: '1 1 350px',
+      maxWidth: 400,
     },
     heading: {
-      marginBottom: '1rem',
+      fontSize: 18,
       fontWeight: 600,
+      marginBottom: 16,
+      color: '#f0a500',
     },
     label: {
       display: 'block',
-      marginBottom: '1rem',
-      fontSize: '0.95rem',
+      marginBottom: 12,
+      fontSize: 14,
     },
     input: {
       width: '100%',
-      padding: '0.5rem',
-      border: '1px solid #555',
-      borderRadius: '4px',
-      backgroundColor: '#333',
+      padding: 10,
+      borderRadius: 5,
+      border: '1px solid #333',
+      backgroundColor: '#1a1a1a',
       color: '#eee',
-      fontSize: '1rem',
-      transition: 'border-color 0.3s ease',
+      fontSize: 14,
+      outline: 'none',
+      transition: 'border-color 0.3s',
     },
     inputError: {
       borderColor: '#e74c3c',
     },
+    inputFocus: {
+      borderColor: '#f0a500',
+    },
     errorMsg: {
       color: '#e74c3c',
-      fontSize: '0.8rem',
-      marginTop: '0.2rem',
-      display: 'block',
+      fontSize: 12,
+      marginTop: 4,
     },
     textarea: {
       width: '100%',
-      padding: '0.5rem',
-      border: '1px solid #555',
-      borderRadius: '4px',
-      backgroundColor: '#333',
+      padding: 10,
+      borderRadius: 5,
+      border: '1px solid #333',
+      backgroundColor: '#1a1a1a',
       color: '#eee',
-      fontSize: '1rem',
-      transition: 'border-color 0.3s ease',
+      fontSize: 14,
+      outline: 'none',
+      transition: 'border-color 0.3s',
       resize: 'vertical',
+      minHeight: 90,
     },
     button: {
       backgroundColor: '#f0a500',
       border: 'none',
-      padding: '0.7rem 1.2rem',
-      fontSize: '1rem',
-      fontWeight: 600,
-      color: '#222',
-      borderRadius: '5px',
+      borderRadius: 5,
+      padding: '12px 24px',
+      color: '#121212',
+      fontWeight: 'bold',
+      fontSize: 16,
       cursor: 'pointer',
-      transition: 'background-color 0.3s ease',
+      transition: 'background-color 0.3s',
+      marginTop: 8,
     },
   };
+
+  // Handle focus style on inputs (optional enhancement)
+  const [focus, setFocus] = useState({});
+
+  const onFocus = (field) => setFocus({ ...focus, [field]: true });
+  const onBlur = (field) => setFocus({ ...focus, [field]: false });
+
+  const inputStyle = (field) => ({
+    ...styles.input,
+    ...(errors[field] ? styles.inputError : {}),
+    ...(focus[field] ? styles.inputFocus : {}),
+  });
+
+  const textareaStyle = (field) => ({
+    ...styles.textarea,
+    ...(errors[field] ? styles.inputError : {}),
+    ...(focus[field] ? styles.inputFocus : {}),
+  });
 
   return (
     <footer style={styles.footer}>
       <div style={styles.legal}>
-        <p style={styles.legalP}>© 2025 Soufiane Boutatss. All rights reserved.</p>
-        <p style={styles.legalP}>
-          <a href="/legal" style={styles.legalLink}>Legal Mentions</a> |{' '}
-          <a href="/privacy" style={styles.legalLink}>Privacy Policy</a>
+        <p>© 2025 Soufiane Boutatss. Tous droits réservés.</p>
+        <p>
+          <a href="/legal" style={styles.legalLink}>Mentions Légales</a> |{' '}
+          <a href="/privacy" style={styles.legalLink}>Politique de Confidentialité</a>
         </p>
       </div>
 
@@ -127,10 +151,9 @@ export default function Footer() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            style={{ 
-              ...styles.input, 
-              ...(errors.name ? styles.inputError : {}) 
-            }}
+            onFocus={() => onFocus('name')}
+            onBlur={() => onBlur('name')}
+            style={inputStyle('name')}
             placeholder="Votre nom"
           />
           {errors.name && <small style={styles.errorMsg}>{errors.name}</small>}
@@ -143,10 +166,9 @@ export default function Footer() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            style={{ 
-              ...styles.input, 
-              ...(errors.email ? styles.inputError : {}) 
-            }}
+            onFocus={() => onFocus('email')}
+            onBlur={() => onBlur('email')}
+            style={inputStyle('email')}
             placeholder="votre.email@example.com"
           />
           {errors.email && <small style={styles.errorMsg}>{errors.email}</small>}
@@ -158,12 +180,10 @@ export default function Footer() {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            style={{ 
-              ...styles.textarea, 
-              ...(errors.message ? styles.inputError : {}) 
-            }}
+            onFocus={() => onFocus('message')}
+            onBlur={() => onBlur('message')}
+            style={textareaStyle('message')}
             placeholder="Votre message"
-            rows="4"
           />
           {errors.message && <small style={styles.errorMsg}>{errors.message}</small>}
         </label>
