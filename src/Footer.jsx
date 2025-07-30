@@ -1,309 +1,182 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const CustomFooter = () => {
-  const currentYear = new Date().getFullYear();
+export default function Footer() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const errs = {};
+    if (!formData.name.trim()) errs.name = 'Name is required';
+    if (!formData.email.trim()) errs.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) errs.email = 'Email is invalid';
+    if (!formData.message.trim()) errs.message = 'Message is required';
+    setErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  const handleChange = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      alert(`Thanks, ${formData.name}! Your message has been received.`);
+      setFormData({ name: '', email: '', message: '' });
+      setErrors({});
+    }
+  };
+
+  const styles = {
+    footer: {
+      backgroundColor: '#222',
+      color: '#eee',
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      padding: '2rem',
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    },
+    legal: {
+      flex: '1 1 300px',
+      marginBottom: '1rem',
+    },
+    legalP: {
+      margin: '0.3rem 0',
+      fontSize: '0.9rem',
+    },
+    legalLink: {
+      color: '#aad8d3',
+      textDecoration: 'none',
+      margin: '0 0.5rem',
+      cursor: 'pointer',
+    },
+    contact: {
+      flex: '1 1 300px',
+      maxWidth: '400px',
+    },
+    heading: {
+      marginBottom: '1rem',
+      fontWeight: 600,
+    },
+    label: {
+      display: 'block',
+      marginBottom: '1rem',
+      fontSize: '0.95rem',
+    },
+    input: {
+      width: '100%',
+      padding: '0.5rem',
+      border: '1px solid #555',
+      borderRadius: '4px',
+      backgroundColor: '#333',
+      color: '#eee',
+      fontSize: '1rem',
+      transition: 'border-color 0.3s ease',
+    },
+    inputError: {
+      borderColor: '#e74c3c',
+    },
+    errorMsg: {
+      color: '#e74c3c',
+      fontSize: '0.8rem',
+      marginTop: '0.2rem',
+      display: 'block',
+    },
+    textarea: {
+      width: '100%',
+      padding: '0.5rem',
+      border: '1px solid #555',
+      borderRadius: '4px',
+      backgroundColor: '#333',
+      color: '#eee',
+      fontSize: '1rem',
+      transition: 'border-color 0.3s ease',
+      resize: 'vertical',
+    },
+    button: {
+      backgroundColor: '#f0a500',
+      border: 'none',
+      padding: '0.7rem 1.2rem',
+      fontSize: '1rem',
+      fontWeight: 600,
+      color: '#222',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',
+    },
+  };
 
   return (
-    <div className="portfolio-app">
-    
-      
-      <footer className="portfolio-footer">
-        <div className="footer-container">
-          {/* Contact Section */}
-          <div className="footer-contact-section">
-            <h3 className="footer-contact-title">
-              Connect With Me
-            </h3>
-            <div className="footer-contact-links">
-              <a 
-                href="mailto:contact@soufianeboutatssdev.com" 
-                className="footer-email-link"
-                aria-label="Email"
-              >
-                <span className="footer-email-icon">✉️</span>
-                <span className="footer-email-text">contact@soufianeboutatssdev.com</span>
-              </a>
-              
-              <div className="footer-social-links">
-                <a 
-                  href="https://github.com/soufianeboutat" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-social-link"
-                  aria-label="GitHub"
-                >
-                  <span className="footer-social-icon">🐱</span>
-                </a>
-                <a 
-                  href="https://linkedin.com/in/soufianeboutat" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-social-link"
-                  aria-label="LinkedIn"
-                >
-                  <span className="footer-social-icon">👔</span>
-                </a>
-                <a 
-                  href="https://twitter.com/soufianeboutat" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="footer-social-link"
-                  aria-label="Twitter"
-                >
-                  <span className="footer-social-icon">🐦</span>
-                </a>
-              </div>
-            </div>
-          </div>
+    <footer style={styles.footer}>
+      <div style={styles.legal}>
+        <p style={styles.legalP}>© 2025 Soufiane Boutatss. All rights reserved.</p>
+        <p style={styles.legalP}>
+          <a href="/legal" style={styles.legalLink}>Legal Mentions</a> |{' '}
+          <a href="/privacy" style={styles.legalLink}>Privacy Policy</a>
+        </p>
+      </div>
 
-          {/* License and Copyright */}
-          <div className="footer-legal-section">
-            <div className="footer-copyright">
-              <p className="footer-copyright-text">© {currentYear} Soufiane Boutats. All Rights Reserved.</p>
-              <p className="footer-license-text">Code licensed under MIT License. Content owned by Soufiane Boutats.</p>
-            </div>
-            
-            <div className="footer-built-with">
-              <p className="footer-built-text">Crafted with React & Custom CSS</p>
-            </div>
-          </div>
-        </div>
-      </footer>
-      
-      <style jsx>{`
-        .portfolio-app {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          background: linear-gradient(135deg, #1a1f2d, #0d1117);
-          color: #e6edf3;
-          font-family: 'Segoe UI', 'Roboto', sans-serif;
-        }
-        
-        .portfolio-content {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2rem;
-        }
-        
-        .portfolio-card {
-          background: rgba(22, 27, 34, 0.8);
-          border-radius: 16px;
-          padding: 3rem;
-          max-width: 800px;
-          width: 100%;
-          text-align: center;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          border: 1px solid rgba(240, 246, 252, 0.1);
-          backdrop-filter: blur(10px);
-        }
-        
-        .portfolio-title {
-          font-size: 2.5rem;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(90deg, #58a6ff, #2ea043);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 700;
-        }
-        
-        .portfolio-description {
-          font-size: 1.2rem;
-          color: #8b949e;
-          line-height: 1.6;
-          max-width: 600px;
-          margin: 0 auto;
-        }
-        
-        /* Unique Footer Styles */
-        .portfolio-footer {
-          background: linear-gradient(to right, #0d1117, #161b22);
-          color: #c9d1d9;
-          padding: 3rem 1.5rem 1.5rem;
-          border-top: 1px solid rgba(240, 246, 252, 0.1);
-        }
-        
-        .footer-container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-        
-        /* Contact Section */
-        .footer-contact-section {
-          margin-bottom: 2.5rem;
-          padding-bottom: 2rem;
-          border-bottom: 1px solid rgba(240, 246, 252, 0.1);
-        }
-        
-        .footer-contact-title {
-          font-size: 1.6rem;
-          font-weight: 600;
-          margin-bottom: 1.8rem;
-          color: #58a6ff;
-          position: relative;
-          display: inline-block;
-        }
-        
-        .footer-contact-title::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 60%;
-          height: 3px;
-          background: linear-gradient(to right, #58a6ff, #2ea043);
-          border-radius: 3px;
-        }
-        
-        .footer-contact-links {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 2rem;
-          align-items: center;
-        }
-        
-        .footer-email-link {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          color: #c9d1d9;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          padding: 0.8rem 1.2rem;
-          border-radius: 8px;
-          background: rgba(33, 38, 45, 0.5);
-        }
-        
-        .footer-email-link:hover {
-          background: rgba(48, 54, 61, 0.7);
-          transform: translateY(-3px);
-          color: #58a6ff;
-          box-shadow: 0 5px 15px rgba(88, 166, 255, 0.1);
-        }
-        
-        .footer-email-icon {
-          font-size: 1.5rem;
-        }
-        
-        .footer-email-text {
-          font-size: 1.1rem;
-          font-weight: 500;
-        }
-        
-        .footer-social-links {
-          display: flex;
-          gap: 1.5rem;
-        }
-        
-        .footer-social-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          background: rgba(33, 38, 45, 0.5);
-          color: #c9d1d9;
-          transition: all 0.3s ease;
-          font-size: 1.5rem;
-          text-decoration: none;
-        }
-        
-        .footer-social-link:hover {
-          transform: translateY(-5px) scale(1.1);
-          background: linear-gradient(135deg, #1f6feb, #2ea043);
-          box-shadow: 0 5px 20px rgba(31, 111, 235, 0.3);
-          color: white;
-        }
-        
-        /* Legal Section */
-        .footer-legal-section {
-          padding-top: 2rem;
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        
-        .footer-copyright {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        
-        .footer-copyright-text {
-          font-size: 0.95rem;
-          color: #8b949e;
-        }
-        
-        .footer-license-text {
-          font-size: 0.85rem;
-          color: #6e7681;
-        }
-        
-        .footer-built-with {
-          font-size: 0.95rem;
-          color: #8b949e;
-          text-align: right;
-        }
-        
-        .footer-built-text {
-          padding: 0.5rem 1rem;
-          background: rgba(33, 38, 45, 0.5);
-          border-radius: 6px;
-          display: inline-block;
-        }
-        
-        /* Responsive Design */
-        @media (min-width: 768px) {
-          .footer-legal-section {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-          }
-          
-          .footer-contact-links {
-            justify-content: space-between;
-          }
-        }
-        
-        @media (max-width: 767px) {
-          .footer-contact-links {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
-          }
-          
-          .footer-email-link {
-            width: 100%;
-          }
-          
-          .footer-built-with {
-            text-align: left;
-          }
-          
-          .portfolio-card {
-            padding: 2rem 1.5rem;
-          }
-          
-          .portfolio-title {
-            font-size: 2rem;
-          }
-        }
-        
-        @media (max-width: 480px) {
-          .portfolio-title {
-            font-size: 1.8rem;
-          }
-          
-          .footer-email-text {
-            font-size: 1rem;
-          }
-        }
-      `}</style>
-    </div>
+      <form style={styles.contact} onSubmit={handleSubmit} noValidate>
+        <h3 style={styles.heading}>Contactez-moi</h3>
+
+        <label style={styles.label}>
+          Nom
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            style={{ 
+              ...styles.input, 
+              ...(errors.name ? styles.inputError : {}) 
+            }}
+            placeholder="Votre nom"
+          />
+          {errors.name && <small style={styles.errorMsg}>{errors.name}</small>}
+        </label>
+
+        <label style={styles.label}>
+          Email
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            style={{ 
+              ...styles.input, 
+              ...(errors.email ? styles.inputError : {}) 
+            }}
+            placeholder="votre.email@example.com"
+          />
+          {errors.email && <small style={styles.errorMsg}>{errors.email}</small>}
+        </label>
+
+        <label style={styles.label}>
+          Message
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            style={{ 
+              ...styles.textarea, 
+              ...(errors.message ? styles.inputError : {}) 
+            }}
+            placeholder="Votre message"
+            rows="4"
+          />
+          {errors.message && <small style={styles.errorMsg}>{errors.message}</small>}
+        </label>
+
+        <button
+          type="submit"
+          style={styles.button}
+          onMouseOver={e => (e.currentTarget.style.backgroundColor = '#cf8500')}
+          onMouseOut={e => (e.currentTarget.style.backgroundColor = '#f0a500')}
+        >
+          Envoyer
+        </button>
+      </form>
+    </footer>
   );
-};
-
-export default CustomFooter;
+}
