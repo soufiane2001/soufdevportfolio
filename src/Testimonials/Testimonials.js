@@ -25,7 +25,7 @@ const testimonialsData = [
     name: 'Michel Reby',
     role: 'Painter',
     email: 'michelreby@gmail.com',
-    text: "Working with Soufiane on the Reby Art website has been a fantastic experience! He took our artistic vision and brought it to life...",
+    text: "Working with Soufiane on the Reby Art website has been a fantastic experience! He took our artistic vision and brought it to life",
     image: michel,
   
   },
@@ -33,7 +33,7 @@ const testimonialsData = [
     name: 'Hind El hassouni ',
     role: 'ceo agence',
     email: 'elhassounihind39@gmail.com',
-    text: "Working with Soufiane on the Reby Art website has been a fantastic experience! He took our artistic vision and brought it to life...",
+    text: "“Soufiane did an amazing job building our software. He understood our needs perfectly, delivered on time, and the final product works flawlessly. Highly recommended!”",
     image: hinda,
   
   },
