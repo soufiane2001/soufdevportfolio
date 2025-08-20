@@ -66,8 +66,8 @@ const Hero = () => {
       </div>
 
 
-  <div>
-    <h3>Follow me</h3>
+  <div className='foothero' style={{marginTop:150,position:'absolute',marginLeft:-490}}>
+  
    <div>
          <a href="https://web.facebook.com/soufianski2001" >
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png"/>
@@ -75,7 +75,7 @@ const Hero = () => {
              <a href="https://www.linkedin.com/in/soufiane-boutatss-96400a1ba/" class="">
     <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"/></a>
             <a href="https://github.com/soufiane2001" class="">
-    <img src="https://velog.velcdn.com/images/bki654/post/7d95db47-f1ec-4a84-9130-ef3500b7865b/image.jpg"/>
+    <img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg"/>
         </a>
 
    </div>
