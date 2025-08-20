@@ -1,15 +1,15 @@
 .hero{
     display: flex;
     justify-content: space-around;
-    padding: 50px;
+    padding: 10px;
     padding-top: 135px;
     
  align-items: flex-start;
 }
 .hero h1,.hero h2{
-    font-size: 55pt !important;
+    font-size: 50pt !important;
     color: white !important;
-    margin-top: -55px;
+    margin-top: -69px;
 }
 .hero h1 span{
     font-size: 55pt !important;
@@ -25,13 +25,13 @@ padding: 25px;
 }
 
 .hero h2 span{
-    font-size: 55pt !important;
+    font-size: 49pt !important;
     color: rgb(251, 88, 6) !important;
  
 }
 
 .hero img {
-    width: 300px;
+    width: 200px;
     object-fit: contain;
 }
 .contact{
@@ -77,6 +77,9 @@ padding: 25px;
     margin-top: -10px;
     font-size: 12pt;
   }
+
+
+  
 .border{
     border-right: 4px solid rgb(8, 8, 81);
 }
@@ -178,7 +181,7 @@ padding: 25px;
 }
 
 .herofooter div div img {
-    width: 2.4vw;
+    width: 4.4vw;
     margin-top: -1vw;
 }
 
