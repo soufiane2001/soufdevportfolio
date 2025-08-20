@@ -1,7 +1,7 @@
 .about-container {
     padding: 4rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     font-family: 'Arial', sans-serif;
   }
@@ -17,6 +17,7 @@
   .about-image-section {
     position: relative;
     width: 100%;
+    margin-top: 120px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -55,14 +56,14 @@
   }
   
   .about-text-section h4 {
-    font-size: 1rem;
+    font-size: 1.8rem;
     color: #6a5af9;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
   
   .about-text-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
     color: white;
     line-height: 1.2;
@@ -73,7 +74,7 @@
   }
   
   .about-text-section p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #cccccc;
     font-weight: 600;
     margin-bottom: 1.5rem;
