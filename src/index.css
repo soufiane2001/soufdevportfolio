@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+
+  background: linear-gradient(135deg,black, #01053a, #170017); /* Romantic pastel gradient */
+ 
+  font-family: 'Georgia', serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+*{
+  font-family: "DM Sans", serif;
+  font-optical-sizing: auto;
+
+}

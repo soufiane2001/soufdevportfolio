@@ -1,0 +1,80 @@
+.skills-container {
+    padding: 2rem;
+ 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-grid {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .skill-row {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .skill-row:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .skill-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+    color: #61dafb; /* Default color for React icon */
+  }
+  
+  .skill-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .skill-dots {
+    display: flex;
+    gap: 0.3rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .dot.filled {
+    background-color: #a855f7;
+  }
+  
+  /* Custom style for VS Code icon */
+  .custom-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+  

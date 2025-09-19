@@ -1,0 +1,330 @@
+.hero{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+    padding-top: 135px;
+    
+ align-items: flex-start;
+}
+.hero h1,.hero h2{
+    font-size: 50pt !important;
+    color: white !important;
+    margin-top: -69px;
+}
+.hero h1 span{
+    font-size: 55pt !important;
+    color: rgb(214, 196, 1) !important;
+   
+}
+.hero h2 {
+margin-top: -15px;
+border: 7px solid rgb(79, 0, 103);
+border-radius: 35px;
+padding: 25px;
+   transform: rotate(3deg);
+}
+
+.hero h2 span{
+    font-size: 49pt !important;
+    color: rgb(251, 88, 6) !important;
+ 
+}
+
+.hero img {
+    width: 250px;
+    object-fit: contain;
+    margin-left: -70px;
+    margin-top: -80px;
+}
+.contact{
+    background-color: rgba(226, 94, 0, 0.986);
+    color: white;
+    font-size: 14pt;
+    padding: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+}
+.cv{
+    background:none;
+    color: white;
+    font-size: 14pt;
+    padding: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid orangered;
+    margin-left: 10px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+
+
+.herofooter{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.herofooter div{
+    padding-right: 45px;
+}
+.herofooter h3{
+  color: whitesmoke;
+  font-size: 20pt;
+}
+
+.herofooter p{
+    color: rgb(128, 95, 162);
+    font-weight: 800;
+    margin-top: -10px;
+    font-size: 12pt;
+  }
+
+
+  
+.border{
+    border-right: 4px solid rgb(8, 8, 81);
+}
+.herofooter div div{
+    display: flex;
+}
+.herofooter div div img{
+    width: 35px;
+    margin-top: -10px;
+    margin-left: 15px;
+}
+.contact {
+    background-color: rgba(226, 94, 0, 0.986);
+    color: white;
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    font-weight: 700;
+    border: none;
+    border-radius: 1vw;
+}
+.contact:hover{
+    background: none;
+    color: rgba(226, 94, 0, 0.986);
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid orangered;
+    border-radius: 1vw;
+}
+
+
+
+
+
+
+.cv {
+    background: none;
+    color: white;
+    font-size: 1.5vw;
+    padding: 1vw 2vw;
+    border: 0.2vw solid rgb(237, 114, 7);
+    margin-left: 1vw;
+    font-weight: 700;
+    border-radius: 1vw;
+}
+
+.cv:hover{
+    background-color: rgba(226, 94, 0, 0.986);
+    color: white;
+   
+    font-weight: 700;
+
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.herofooter {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5vw;
+    gap: 3vw;
+    flex-wrap: wrap;
+}
+
+.herofooter div {
+  
+    padding-right: 2vw;
+}
+
+.herofooter h3 {
+    color: whitesmoke;
+    font-size: 1.7vw;
+}
+
+.herofooter p {
+    color: rgb(128, 95, 162);
+    font-weight: 800;
+    margin-top: -1vw;
+    font-size: 1.2vw;
+}
+
+.border {  width: 180px;
+    border-right: 0.3vw solid rgb(8, 8, 81);
+}
+
+.herofooter div div {
+    display: flex;
+    gap: 1vw;
+}
+
+.herofooter div div img {
+    width: 4.4vw;
+    margin-top: -1vw;
+}
+
+@media (max-width: 1024px) { /* Tablet */
+
+    .foothero{
+        margin-left: 30px !important;
+        margin-top: 680px !important;
+
+    }
+    .contact, .cv {
+      margin-left: 15%;
+
+        padding: 1.5vw 3vw;
+    }
+
+    .herofooter {
+        flex-direction: column;
+        align-items: center;
+        gap: 5vw;
+    }
+
+    .herofooter div {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .herofooter h3 {
+        font-size: 3vw;
+    }
+
+    .herofooter p {
+        font-size: 2vw;
+    }
+
+    .herofooter div div img {
+        width: 5vw;
+        margin-top: -110px;
+      display: inline !important;
+    }
+     .hero img {
+           display: none;
+        width: 150px; /* Smaller image */
+        margin-top: 15px; /* Add spacing */
+    }
+}
+
+@media (max-width: 768px) { /* Mobile */
+
+     .foothero{
+        margin-left: -10px !important;
+        margin-top: 550px !important;
+
+    }
+    .contact, .cv {
+        font-size: 2.3vw;
+margin-left: 20%;
+        padding: 2vw 4vw;
+    }
+
+    .herofooter {
+        flex-direction: column;
+        align-items: center;
+        gap: 7vw;
+    }
+
+    .herofooter div {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .herofooter h3 {
+        font-size: 4vw;
+    }
+
+    .herofooter p {
+        font-size: 2.5vw;
+    }
+
+    .herofooter div div img {
+        width: 6vw;
+         margin-top: -570px !important;
+    }
+}
+@media (max-width: 1024px) { /* Tablet */
+    .hero {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items */
+        align-items: center;
+        padding-top: 50px; /* Adjust padding for smaller screens */
+    }
+
+    .hero h1, .hero h2 {
+        font-size: 40pt !important; /* Reduce font size */
+        margin-top: 0; /* Adjust margin for better spacing */
+        text-align: center; /* Center align text */
+    }
+
+    .hero h1 span, .hero h2 span {
+        font-size: 40pt !important; /* Match reduced size */
+    }
+
+    .hero h2 {
+        border-width: 5px; /* Reduce border thickness */
+        border-radius: 20px; /* Adjust border radius */
+        padding: 15px; /* Adjust padding */
+        transform: none; /* Remove rotation for better readability */
+    }
+
+  
+}
+
+@media (max-width: 768px) { /* Phone */
+    .hero {
+        flex-direction: column; /* Stack items */
+        padding-top: 30px; /* Adjust padding */
+        gap: 20px; /* Add space between items */
+    }
+
+    .hero h1, .hero h2 {
+        font-size: 30pt !important; /* Further reduce font size */
+        text-align: center; /* Center text */
+    }
+
+    .hero h1 span, .hero h2 span {
+        font-size: 30pt !important; /* Adjust span size */
+    }
+
+    .hero h2 {
+        border-width: 3px; /* Thinner border */
+        border-radius: 15px; /* Smaller border radius */
+        padding: 10px; /* Compact padding */
+        transform: none; /* No rotation */
+    }
+
+    .hero img {
+           
+        width: 150px; /* Smaller image */
+        margin-top: 15px; /* Add spacing */
+    }
+}
+

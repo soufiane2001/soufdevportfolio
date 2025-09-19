@@ -1,0 +1,354 @@
+.portfolio {
+  text-align: center;
+  padding: 50px 70px;
+  color: #fff;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  height: 550px;
+}
+
+/* Cards positioning */
+.carousel-card {
+  position: absolute;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: scale(0.7);
+  filter: blur(2px);
+}
+
+.carousel-card.center {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+}
+
+.carousel-card.prev {
+  opacity: 0.5;
+  transform: scale(0.8);
+  filter: blur(2px);
+  left: 25%;
+  z-index: 2;
+}
+
+.carousel-card.next {
+  opacity: 0.5;
+  transform: scale(0.8);
+  filter: blur(2px);
+  left: 75%;
+  z-index: 2;
+}
+
+/* Card Styles */
+.card {
+  background-color: #13173f;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 500px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.tech-badge {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 23px;
+  background: #2c2f70;
+  color: #fff;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #ff7e29, #ffa75e);
+  color: #fff;
+}
+
+.demo-btn {
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: #fff;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background 0.3s;
+  z-index: 5;
+}
+
+.arrow:hover {
+  background: rgba(255, 126, 41, 0.8);
+}
+
+.left-arrow {
+  left: -50px;
+}
+
+.right-arrow {
+  right: -50px;
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  background: #13173f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+}
+
+.close-button:hover {
+  background: rgba(255, 126, 41, 0.8);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px; /* smaller max-width for video */
+  background: #13173f;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.close-button:hover {
+  background: rgba(255, 126, 41, 0.8);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.video-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.video-modal.fade-out {
+  animation: fadeOut 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: #13173f;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.video-container iframe,
+.video-container video,
+.video-container .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+/* ... your existing CSS ... */
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.play-btn {
+  background: linear-gradient(135deg, #ff7e29, #ffa75e);
+  color: #fff;
+}
+
+.demo-btn {
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: #fff;
+}
+
+/* ✅ New GitHub button */
+.repo-btn {
+  background: linear-gradient(135deg, #2ecc71, #58d68d);
+  color: #fff;
+}
+.repo-btn:hover {
+  opacity: 0.9;
+}

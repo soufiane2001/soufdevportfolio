@@ -1,0 +1,97 @@
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    color: wheat;
+    position: relative;
+}
+
+.header h3 {
+    font-size: 20pt;
+}
+#mylogo{
+    width: 210px;
+    height: 180px;
+}
+/* Menu Styling */
+.header ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.header ul li {
+    color: white;
+    font-size: 13pt;
+    margin-right: 35px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.header ul li:hover {
+    color: rgb(161, 159, 159);
+  
+}
+.header ul li button {
+    background: none;
+    color: rgb(236, 99, 1);
+    border: 1px solid rgb(231, 78, 1);
+    padding: 10px 20px;
+    font-size: 13pt;
+    font-weight: 800;
+    border-radius: 10px;
+}
+.header ul li button:hover {
+    background: orangered;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(231, 78, 1);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: 800;
+    border-radius: 10px;
+}
+
+
+
+/* Burger Menu Styling */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    background: white;
+    height: 4px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* Responsive Styling */
+@media (max-width: 1008px) {
+    .header ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+    .header ul.open {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+}
