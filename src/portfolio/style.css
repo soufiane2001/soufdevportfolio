@@ -77,6 +77,12 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.card-content  h3{
+color: rgb(52, 145, 216);
+}
+.card-content  p{
+  margin-top: -10px;
+}
 
 .tech-stack {
   display: flex;
@@ -352,3 +358,31 @@
 .repo-btn:hover {
   opacity: 0.9;
 }
+
+
+
+     /* Desktop Styles */
+        @media (max-width: 524px) {
+          .carousel-container {
+
+            background-color: #2ecc71 !important;
+          }
+          .carousel {
+ background-color: red;
+}
+            .portfolio {
+                padding: 70px 50px;
+            }
+           
+            .card {
+max-width: 360px;
+margin-left: -0px;
+}
+.btn {
+  padding: 8px 11px;
+  border-radius: 30px;
+font-size: 12px;
+}
+
+
+          }

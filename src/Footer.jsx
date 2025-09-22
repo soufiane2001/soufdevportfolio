@@ -68,7 +68,7 @@ export default function Footer() {
             flex: "1 1 400px",
             maxWidth: 450,
             background: "rgba(255, 255, 255, 0.05)",
-            borderRadius: 20,
+            borderRadius: 30,
             padding: 25,
             backdropFilter: "blur(12px)",
             boxShadow: "0 8px 25px rgba(0,0,0,0.5)",
@@ -84,7 +84,7 @@ export default function Footer() {
               onChange={handleChange}
               placeholder="Your name"
               style={{
-                width: "100%",
+                width: "95%",
                 marginTop: 6,
                 padding: 12,
                 borderRadius: 10,
@@ -108,7 +108,7 @@ export default function Footer() {
               onChange={handleChange}
               placeholder="your.email@example.com"
               style={{
-                width: "100%",
+                width: "95%",
                 marginTop: 6,
                 padding: 12,
                 borderRadius: 10,
@@ -132,7 +132,7 @@ export default function Footer() {
               placeholder="Your message"
               rows={4}
               style={{
-                width: "100%",
+                width: "95%",
                 marginTop: 6,
                 padding: 12,
                 borderRadius: 10,
