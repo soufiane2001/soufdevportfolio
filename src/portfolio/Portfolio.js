@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import { MdClose, MdArrowBack, MdArrowForward } from "react-icons/md";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt ,FaPhp, FaDatabase } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiFirebase, SiClerk ,SiMysql} from "react-icons/si";
+import { SiJavascript, SiTailwindcss, SiFirebase, SiClerk ,SiMysql, SiWordpress} from "react-icons/si";
 
 // Portfolio Data
 const portfolioData = [
@@ -34,6 +34,14 @@ const portfolioData = [
     repo: "https://github.com/soufiane2001/cashappv4", // ✅ GitHub link
     technologies: ["React", "Firebase"],
   },
+    {
+    id: 4,
+    name: "horea-formation.com",
+    description: "horea-formation site vitrine",
+    image: require("../assets/horea.PNG"),
+    demo:'https://www.horea-formation.com/',
+    technologies: ["Wordpress"],
+  },
 ];
 
 // Tech icons
@@ -48,6 +56,7 @@ React: <FaReact className="tech-icon react" />,
   CSS: <FaCss3Alt className="tech-icon css" />,
   PHP: <FaPhp className="tech-icon php" />,
   MySQL: <SiMysql className="tech-icon mysql" />,
+   Wordpress: <SiWordpress className="tech-icon Wordpress" />,
 
 
 };

@@ -363,13 +363,7 @@ color: rgb(52, 145, 216);
 
      /* Desktop Styles */
         @media (max-width: 524px) {
-          .carousel-container {
-
-            background-color: #2ecc71 !important;
-          }
-          .carousel {
- background-color: red;
-}
+  
             .portfolio {
                 padding: 70px 50px;
             }
