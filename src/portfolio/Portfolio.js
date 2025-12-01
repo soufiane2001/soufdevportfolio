@@ -30,6 +30,7 @@ const portfolioData = [
     name: "HighUp Counselling & Psychology Services website",
     description: "HighUp Counselling & Psychology Services, we are devoted to providing trauma-informed",
     image: require("../assets/1762903031465.jpg"),
+       demo:'https://www.highupcounselling.ca/',
     technologies: ["Wix"],
   },
   {
