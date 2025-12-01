@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 import { MdClose, MdArrowBack, MdArrowForward } from "react-icons/md";
 import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt ,FaPhp, FaDatabase } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiFirebase, SiClerk ,SiMysql, SiWordpress} from "react-icons/si";
+import { SiJavascript, SiTailwindcss, SiFirebase, SiClerk ,SiMysql, SiWordpress, SiWix} from "react-icons/si";
 
 // Portfolio Data
 const portfolioData = [
@@ -25,8 +25,15 @@ const portfolioData = [
     repo: "https://github.com/soufiane2001/rebyart", // ✅ GitHub link
     technologies: ["React", "JavaScript"],
   },
-  {
+    {
     id: 3,
+    name: "HighUp Counselling & Psychology Services website",
+    description: "HighUp Counselling & Psychology Services, we are devoted to providing trauma-informed",
+    image: require("../assets/1762903031465.jpg"),
+    technologies: ["Wix"],
+  },
+  {
+    id: 4,
     name: "Cash Management App",
     description: "Manage expenses efficiently using React Native and Firebase.",
     image: require("../assets/pr7.JPG"),
@@ -35,7 +42,7 @@ const portfolioData = [
     technologies: ["React", "Firebase"],
   },
     {
-    id: 4,
+    id: 5,
     name: "horea-formation.com",
     description: "horea-formation site vitrine",
     image: require("../assets/horea.PNG"),
@@ -57,6 +64,7 @@ React: <FaReact className="tech-icon react" />,
   PHP: <FaPhp className="tech-icon php" />,
   MySQL: <SiMysql className="tech-icon mysql" />,
    Wordpress: <SiWordpress className="tech-icon Wordpress" />,
+     Wix: <SiWix className="tech-icon Wix" />
 
 
 };
