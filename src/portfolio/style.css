@@ -126,8 +126,10 @@ color: rgb(52, 145, 216);
 .demo-btn {
   background: linear-gradient(135deg, #3498db, #5dade2);
   color: #fff;
-}
 
+}
+.demo-btn,.repo-btn,.play-btn{
+  font-size:11pt;}
 /* Arrows */
 .arrow {
   position: absolute;
