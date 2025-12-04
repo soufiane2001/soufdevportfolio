@@ -38,12 +38,19 @@ const portfolioData = [
     name: "Cash Management App",
     description: "Manage expenses efficiently using React Native and Firebase.",
     image: require("../assets/pr7.JPG"),
-    video: require("../assets/pr1.mp4"),
+   
     repo: "https://github.com/soufiane2001/cashappv4", // ✅ GitHub link
     technologies: ["React", "Firebase"],
+  },{
+    id: 5,
+    name: "systeme management patients",
+    description: "systeme management patients : patients , appointements ,bills",
+    image: require("../assets/Capture d’écran 2025-12-04 120248.PNG"), 
+    video: require("../assets/20251204_110450.mp4"),
+    technologies: ["Electronjs"],
   },
     {
-    id: 5,
+    id: 6,
     name: "horea-formation.com",
     description: "horea-formation site vitrine",
     image: require("../assets/horea.PNG"),
