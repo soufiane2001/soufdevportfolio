@@ -45,7 +45,7 @@ const portfolioData = [
     id: 5,
     name: "systeme management patients",
     description: "systeme management patients : patients , appointements ,bills",
-    image: require("../assets/Capture d’écran 2025-12-04 120248.PNG"), 
+    image: require("../assets/src/assets/120248.png"), 
     video: require("../assets/20251204_110450.mp4"),
     technologies: ["Electronjs"],
   },
