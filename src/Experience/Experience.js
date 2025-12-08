@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import "./style.css";
 
 const experiences = [
@@ -33,24 +34,75 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const experienceRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (experienceRef.current) {
+      observer.observe(experienceRef.current);
+    }
+
+    return () => {
+      if (experienceRef.current) {
+        observer.unobserve(experienceRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="experience-container" id="experiences">
-      <h2>Experience</h2>
+    <div className="experience-container" id="experiences" ref={experienceRef}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="experience-title">My Experience</h2>
+        <p className="experience-subtitle">My professional journey</p>
+      </motion.div>
+
       <div className="timeline">
         {experiences.map((exp, index) => (
-          <div key={index} className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <h3>{exp.title}</h3>
+          <motion.div
+            key={index}
+            className="timeline-item"
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            <div className="timeline-dot">
+              <div className="dot-inner"></div>
+            </div>
+            <motion.div
+              className="timeline-content"
+              whileHover={{ boxShadow: "0 20px 50px rgba(255, 107, 0, 0.3)" }}
+            >
+              <h3 className="job-title">{exp.title}</h3>
               <span className="company">{exp.company}</span>
               <p className="period">{exp.period}</p>
-              <ul>
+              <ul className="description-list">
                 {exp.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.2 + i * 0.1 }}
+                  >
+                    {desc}
+                  </motion.li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>

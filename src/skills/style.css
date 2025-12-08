@@ -1,80 +1,273 @@
 .skills-container {
-    padding: 2rem;
- 
-    color: white;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  padding: 100px 5% 80px;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-title {
+  font-size: clamp(36px, 3.5vw, 52px);
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 40px rgba(214, 196, 1, 0.3);
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+.skills-subtitle {
+  font-size: clamp(16px, 1.3vw, 20px);
+  color: rgb(214, 196, 1);
+  margin-bottom: 60px;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(214, 196, 1, 0.5);
+  animation: subtitle-glow 2s ease-in-out infinite alternate;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skill-card {
+  position: relative;
+  padding: 25px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 20px;
+  border: 1px solid rgba(255, 107, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(255, 107, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 107, 0, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.skill-card:hover::before {
+  animation: card-shine 1.5s ease-in-out;
+}
+
+.skill-card:hover {
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+              0 0 30px rgba(255, 107, 0, 0.3),
+              inset 0 0 20px rgba(255, 107, 0, 0.1);
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px currentColor);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+  filter: drop-shadow(0 0 20px currentColor);
+}
+
+.skill-name {
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.skill-level-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.skill-dots {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dot.filled {
+  background: linear-gradient(135deg, rgba(255, 107, 0, 0.9), rgba(214, 196, 1, 0.7));
+  border-color: rgba(255, 107, 0, 0.5);
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.6),
+              0 0 20px rgba(214, 196, 1, 0.3);
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+.dot.filled:hover {
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.9),
+              0 0 30px rgba(214, 196, 1, 0.5);
+}
+
+.skill-percentage {
+  font-size: clamp(14px, 1.1vw, 18px);
+  font-weight: 700;
+  color: rgb(214, 196, 1);
+  text-shadow: 0 0 10px rgba(214, 196, 1, 0.5);
+  min-width: 45px;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes title-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+                 0 0 40px rgba(214, 196, 1, 0.3);
   }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  50% {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
+                 0 0 60px rgba(214, 196, 1, 0.5);
   }
-  
+}
+
+@keyframes subtitle-glow {
+  from {
+    text-shadow: 0 0 10px rgba(214, 196, 1, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(214, 196, 1, 0.7);
+  }
+}
+
+@keyframes card-shine {
+  0% {
+    left: -50%;
+    top: -50%;
+  }
+  100% {
+    left: 150%;
+    top: 150%;
+  }
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 107, 0, 0.5),
+                0 0 15px rgba(214, 196, 1, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.8),
+                0 0 30px rgba(214, 196, 1, 0.4);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skills-container {
+    padding: 80px 5% 60px;
+  }
+
   .skills-grid {
-   display: flex;
-   justify-content: space-around;
-   flex-wrap: wrap;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
   }
-  
-  .skill-row {
-    margin-top: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 60px 20px 50px;
   }
-  
-  .skill-row:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+  .skills-title {
+    font-size: 32px;
   }
-  
-  .skill-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+
+  .skills-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
   }
-  
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
   .skill-icon {
     font-size: 2rem;
-    color: #61dafb; /* Default color for React icon */
   }
-  
+
   .skill-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
+    font-size: 16px;
   }
-  
-  .skill-dots {
-    display: flex;
-    gap: 0.3rem;
-  }
-  
+
   .dot {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
+    gap: 5px;
   }
-  
-  .dot.filled {
-    background-color: #a855f7;
+
+  .skill-percentage {
+    font-size: 15px;
   }
-  
-  /* Custom style for VS Code icon */
-  .custom-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 50px 15px 40px;
   }
-  
+
+  .skills-title {
+    font-size: 28px;
+  }
+
+  .skill-card {
+    padding: 18px;
+  }
+
+  .skill-header {
+    gap: 12px;
+  }
+
+  .skill-icon {
+    font-size: 1.8rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    gap: 4px;
+  }
+}

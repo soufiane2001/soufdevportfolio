@@ -1,62 +1,132 @@
 /* Header Styling */
 .header {
+    position: relative;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
-    color: wheat;
-    position: relative;
+    padding: 20px 5%;
+    z-index: 100;
+    background: transparent;
 }
 
-.header h3 {
-    font-size: 20pt;
+/* Logo */
+.header-logo {
+    z-index: 101;
 }
-#mylogo{
+
+.header-logo img {
     width: 210px;
     height: 180px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 15px rgba(214, 196, 1, 0.4));
+    transition: all 0.3s ease;
 }
-/* Menu Styling */
-.header ul {
+
+.header-logo img:hover {
+    filter: drop-shadow(0 0 25px rgba(214, 196, 1, 0.7));
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 10px;
+    margin: 0;
+    padding: 0;
 }
 
-.header ul li {
+.nav-menu li {
+    position: relative;
+}
+
+.nav-link {
     color: white;
     font-size: 13pt;
-    margin-right: 35px;
     font-weight: 700;
+    padding: 10px 18px;
+    margin-right: 20px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
-.header ul li:hover {
-    color: rgb(161, 159, 159);
-  
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(214, 196, 1, 0.8), rgba(255, 107, 0, 0.8));
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
-.header ul li button {
-    background: none;
+
+.nav-link:hover::before {
+    width: 70%;
+}
+
+.nav-link:hover {
+    color: rgb(214, 196, 1);
+    text-shadow: 0 0 15px rgba(214, 196, 1, 0.6),
+                 0 0 25px rgba(214, 196, 1, 0.3);
+}
+
+/* CTA Button */
+.cta-button {
+    background: linear-gradient(135deg, rgba(226, 94, 0, 0.9), rgba(255, 107, 0, 0.8));
+    color: white;
+    border: 2px solid rgba(236, 99, 1, 0.5);
+    padding: 10px 20px;
+    font-size: 13pt;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(226, 94, 0, 0.4),
+                0 0 15px rgba(226, 94, 0, 0.2);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: button-shine 3s infinite;
+}
+
+.cta-button:hover {
+    background: transparent;
     color: rgb(236, 99, 1);
-    border: 1px solid rgb(231, 78, 1);
-    padding: 10px 20px;
-    font-size: 13pt;
-    font-weight: 800;
-    border-radius: 10px;
-}
-.header ul li button:hover {
-    background: orangered;
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(231, 78, 1);
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 13pt;
-    font-weight: 800;
-    border-radius: 10px;
+    border-color: rgb(236, 99, 1);
+    box-shadow: 0 8px 30px rgba(231, 78, 1, 0.6),
+                0 0 25px rgba(231, 78, 1, 0.4);
+    transform: translateY(-2px);
 }
 
-
-
-/* Burger Menu Styling */
+/* Burger Menu */
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -64,34 +134,156 @@
     width: 30px;
     height: 20px;
     cursor: pointer;
+    z-index: 101;
 }
 
-.burger-menu div {
+.burger-menu span {
     background: white;
     height: 4px;
     border-radius: 2px;
     width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.burger-menu:hover span {
+    background: rgb(214, 196, 1);
+    box-shadow: 0 0 15px rgba(214, 196, 1, 0.6);
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+    background: rgb(255, 107, 0);
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.6);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+    background: rgb(255, 107, 0);
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.6);
+}
+
+/* Animations */
+@keyframes button-shine {
+    0% {
+        left: -50%;
+        top: -50%;
+    }
+    100% {
+        left: 150%;
+        top: 150%;
+    }
 }
 
 /* Responsive Styling */
 @media (max-width: 1008px) {
-    .header ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 20px;
-        border-radius: 10px;
-        z-index: 10;
+    .header {
+        padding: 15px 20px;
     }
 
-    .header ul.open {
-        display: flex;
+    .header-logo img {
+        width: 160px;
+        height: 140px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(10, 14, 26, 0.98);
+        transition: right 0.4s ease;
+        border-left: 1px solid rgba(255, 107, 0, 0.2);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 100px 30px 30px;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        font-size: 13pt;
+        padding: 15px 20px;
+        width: 100%;
+        margin-right: 0;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-link::before {
+        display: none;
+    }
+
+    .nav-link:hover {
+        background: rgba(255, 107, 0, 0.1);
+        border-color: rgba(255, 107, 0, 0.3);
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 15px 28px;
     }
 
     .burger-menu {
         display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header-logo img {
+        width: 140px;
+        height: 120px;
+    }
+
+    .nav-menu {
+        width: 260px;
+    }
+
+    .nav-menu ul {
+        padding: 80px 20px 20px;
+    }
+
+    .nav-link {
+        font-size: 12pt;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-logo img {
+        width: 120px;
+        height: 100px;
+    }
+
+    .burger-menu {
+        width: 28px;
+        height: 18px;
+    }
+
+    .nav-menu {
+        width: 240px;
     }
 }
