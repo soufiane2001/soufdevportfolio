@@ -13,7 +13,7 @@
   color: white;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
                0 0 40px rgba(214, 196, 1, 0.3);
-  animation: title-glow 3s ease-in-out infinite;
+  /* animation removed */
 }
 
 .skills-subtitle {
@@ -22,7 +22,7 @@
   margin-bottom: 60px;
   font-weight: 600;
   text-shadow: 0 0 15px rgba(214, 196, 1, 0.5);
-  animation: subtitle-glow 2s ease-in-out infinite alternate;
+  /* animation removed */
 }
 
 .skills-grid {
@@ -47,7 +47,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
               0 0 20px rgba(255, 107, 0, 0.1);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  /* transition removed */
   overflow: hidden;
 }
 
@@ -65,18 +65,15 @@
     transparent
   );
   transform: rotate(45deg);
-  transition: all 0.5s ease;
+  /* transition removed */
 }
 
-.skill-card:hover::before {
-  animation: card-shine 1.5s ease-in-out;
-}
-
+.skill-card:hover::before,
 .skill-card:hover {
-  border-color: rgba(255, 107, 0, 0.5);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
-              0 0 30px rgba(255, 107, 0, 0.3),
-              inset 0 0 20px rgba(255, 107, 0, 0.1);
+  /* hover effects removed */
+  border-color: rgba(255, 107, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(255, 107, 0, 0.1);
 }
 
 .skill-header {
@@ -89,11 +86,12 @@
 .skill-icon {
   font-size: 2.5rem;
   filter: drop-shadow(0 0 10px currentColor);
-  transition: all 0.3s ease;
+  /* transition removed */
 }
 
 .skill-card:hover .skill-icon {
-  filter: drop-shadow(0 0 20px currentColor);
+  /* hover effect removed */
+  filter: drop-shadow(0 0 10px currentColor);
 }
 
 .skill-name {
@@ -122,7 +120,7 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
+  /* transition removed */
 }
 
 .dot.filled {
@@ -130,12 +128,13 @@
   border-color: rgba(255, 107, 0, 0.5);
   box-shadow: 0 0 10px rgba(255, 107, 0, 0.6),
               0 0 20px rgba(214, 196, 1, 0.3);
-  animation: dot-pulse 2s ease-in-out infinite;
+  /* animation removed */
 }
 
 .dot.filled:hover {
-  box-shadow: 0 0 15px rgba(255, 107, 0, 0.9),
-              0 0 30px rgba(214, 196, 1, 0.5);
+  /* hover removed */
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.6),
+              0 0 20px rgba(214, 196, 1, 0.3);
 }
 
 .skill-percentage {
@@ -145,49 +144,6 @@
   text-shadow: 0 0 10px rgba(214, 196, 1, 0.5);
   min-width: 45px;
   text-align: right;
-}
-
-/* Animations */
-@keyframes title-glow {
-  0%, 100% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
-                 0 0 40px rgba(214, 196, 1, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
-                 0 0 60px rgba(214, 196, 1, 0.5);
-  }
-}
-
-@keyframes subtitle-glow {
-  from {
-    text-shadow: 0 0 10px rgba(214, 196, 1, 0.4);
-  }
-  to {
-    text-shadow: 0 0 20px rgba(214, 196, 1, 0.7);
-  }
-}
-
-@keyframes card-shine {
-  0% {
-    left: -50%;
-    top: -50%;
-  }
-  100% {
-    left: 150%;
-    top: 150%;
-  }
-}
-
-@keyframes dot-pulse {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(255, 107, 0, 0.5),
-                0 0 15px rgba(214, 196, 1, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 15px rgba(255, 107, 0, 0.8),
-                0 0 30px rgba(214, 196, 1, 0.4);
-  }
 }
 
 /* Responsive Design */

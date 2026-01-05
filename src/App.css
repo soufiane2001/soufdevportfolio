@@ -17,7 +17,7 @@
         
         /* ----- FOOTER STYLES ----- */
         footer {
-            background: linear-gradient(135deg, #1a2a3a, #0d1b2a);
+            background: linear-gradient(135deg, #a0a2a4, #0d1b2a) !important;
             color: #f0f0f0;
             padding: 3rem 1rem 1.5rem;
             position: relative;

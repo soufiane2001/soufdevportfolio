@@ -21,19 +21,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* GPU acceleration for animations */
-.hero,
-.about-container,
-.skills-container,
-.portfolio,
-.experience-container,
-.testimonials,
-.footer-container {
-  will-change: auto;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
+
 
 /* Disable animations on scroll for better performance */
 @media (prefers-reduced-motion: reduce) {

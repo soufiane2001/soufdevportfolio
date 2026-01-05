@@ -1,11 +1,49 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import './style.css';
 import mylogo from '../assets/logos.png';
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef(null);
+    const burgerRef = useRef(null);
+
+    // Close menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                menuOpen &&
+                menuRef.current &&
+                burgerRef.current &&
+                !menuRef.current.contains(event.target) &&
+                !burgerRef.current.contains(event.target)
+            ) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
+        };
+    }, [menuOpen]);
+
+    // Prevent body scroll when menu is open
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [menuOpen]);
 
     // Close menu when clicking on a link
     const handleLinkClick = () => {
@@ -38,6 +76,7 @@ const Header = () => {
 
             {/* Burger Menu */}
             <motion.div 
+                ref={burgerRef}
                 className={`burger-menu ${menuOpen ? 'active' : ''}`}
                 onClick={() => setMenuOpen(!menuOpen)}
                 whileHover={{ scale: 1.1 }}
@@ -50,13 +89,14 @@ const Header = () => {
 
             {/* Navigation Menu */}
             <motion.nav 
+                ref={menuRef}
                 className={`nav-menu ${menuOpen ? 'open' : ''}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                initial={false}
+                animate={menuOpen ? { opacity: 1 } : { opacity: 1 }}
             >
                 <ul>
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -73,6 +113,7 @@ const Header = () => {
                     </motion.li>
 
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -89,6 +130,7 @@ const Header = () => {
                     </motion.li>
 
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -105,6 +147,7 @@ const Header = () => {
                     </motion.li>
 
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -121,6 +164,7 @@ const Header = () => {
                     </motion.li>
 
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ duration: 0.2 }}
                     >
@@ -137,6 +181,7 @@ const Header = () => {
                     </motion.li>
 
                     <motion.li
+                        initial={false}
                         whileHover={{ scale: 1.08 }}
                         whileTap={{ scale: 0.95 }}
                     >

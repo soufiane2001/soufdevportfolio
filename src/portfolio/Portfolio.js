@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { MdClose, MdArrowBack, MdArrowForward } from "react-icons/md";
 import { FaReact, FaPhp } from "react-icons/fa";
@@ -74,7 +74,6 @@ const Portfolio = () => {
   const [centerIndex, setCenterIndex] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const startX = useRef(0);
 
   const prevSlide = () => {
     setCenterIndex((prev) => (prev === 0 ? portfolioData.length - 1 : prev - 1));
@@ -91,45 +90,31 @@ const Portfolio = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setSelectedVideo(null), 300);
-  };
-
-  const handleTouchStart = (e) => {
-    startX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    const endX = e.changedTouches[0].clientX;
-    if (endX - startX.current > 50) prevSlide();
-    else if (startX.current - endX > 50) nextSlide();
+    setSelectedVideo(null);
   };
 
   return (
     <section className="portfolio" id="portfolio">
       <h2 className="portfolio-title">My Projects</h2>
 
-      <div
-        className="carousel-container"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="carousel-container">
         <button className="arrow left-arrow" onClick={prevSlide}>
-          <MdArrowBack size={30} />
+          <MdArrowBack size={28} />
         </button>
 
         <div className="carousel">
           {portfolioData.map((project, index) => {
-            let positionClass = "side";
-            if (index === centerIndex) positionClass = "center";
+            let className = "carousel-card";
+            if (index === centerIndex) className += " center";
+            else if (index === (centerIndex + 1) % portfolioData.length) className += " next";
             else if (index === (centerIndex - 1 + portfolioData.length) % portfolioData.length)
-              positionClass = "prev";
-            else if (index === (centerIndex + 1) % portfolioData.length)
-              positionClass = "next";
+              className += " prev";
+            else className += " hidden";
 
             return (
-              <div key={project.id} className={`carousel-card ${positionClass}`}>
+              <div key={project.id} className={className}>
                 <div className="card">
-                  <img src={project.image} alt={project.name} loading="lazy" />
+                  <img src={project.image} alt={project.name} />
                   <div className="card-content">
                     <h3>{project.name}</h3>
                     <p>{project.description}</p>
@@ -165,7 +150,7 @@ const Portfolio = () => {
         </div>
 
         <button className="arrow right-arrow" onClick={nextSlide}>
-          <MdArrowForward size={30} />
+          <MdArrowForward size={28} />
         </button>
       </div>
 
@@ -173,10 +158,10 @@ const Portfolio = () => {
         <div className="video-modal">
           <div className="modal-content">
             <button className="close-button" onClick={closeModal}>
-              <MdClose size={24} />
+              <MdClose size={28} />
             </button>
             <div className="video-container">
-              <video src={selectedVideo} controls autoPlay width="100%" height="100%" />
+              <video src={selectedVideo} controls autoPlay />
             </div>
           </div>
         </div>
