@@ -5,7 +5,6 @@
   z-index: 10;                    /* 🔑 above hero effects */
   text-align: center;
   padding: 120px 5% 100px;
-  background: #0b0c1b;
   color: #fff;
   overflow: hidden;               /* 🔑 stop bleed */
 }
