@@ -20,7 +20,7 @@ const portfolioData = [
     name: "Reby Art site web",
     description: "Portfolio for a french painter",
     image: require("../assets/ChatGPT Image 5 sept. 2025, 12_44_53.png"),
-    demo: "https://bdmstore.store/ecom/index.php",
+    demo: "https://rebyart.vercel.app/",
     repo: "https://github.com/soufiane2001/rebyart",
     technologies: ["React", "JavaScript"],
   },
@@ -38,6 +38,7 @@ const portfolioData = [
     description: "Manage expenses with React Native",
     image: require("../assets/pr7.JPG"),
     repo: "https://github.com/soufiane2001/cashappv4",
+     video: require("../assets/pr1.mp4"),
     technologies: ["React", "Firebase"],
   },
   {
